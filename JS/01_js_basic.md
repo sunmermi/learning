@@ -1,7 +1,3 @@
-#자바스크립트 
-
----
-
 #자바스크립트 기본
 
 ###주석
@@ -10,7 +6,7 @@
 
 ###엄격모드 발동 
 : 문법이 엄격함 지키지않으면 오류발생
-`'use strict';`
+- `'use strict';`
 
 ###dot syntax
 ```
@@ -58,10 +54,8 @@ console.log('뭐야');
 </html>
 ```
 
-
-##HTML:구조, CSS:표현, JS:동작
-
 ##스크립트 파일 분리 
+- HTML:구조, CSS:표현, JS:동작
 - 인라인으로 사용하지 않는다. : 코드더러워짐 유지보수 어려움
 ```
 <button 
@@ -92,6 +86,7 @@ console.log('뭐야');
 <button typr="button" id="target"> GOOD click </button>
 <script src="js/marge-app.js"></script>
 ```
+
 - marge-app.js 코드
 ```
 //marge-app.js
@@ -111,10 +106,10 @@ button.onclick = btnClick;
 ```
 
 **PLUS**
-###바디요소 접근
-`var body = document.body;`
-###아이디 접근
-`document.getElementById('아이디명');`
+- 바디요소 접근
+  + `var body = document.body;`
+- 아이디 접근
+  + `document.getElementById('아이디명');`
 
 
 ---
@@ -155,33 +150,33 @@ var a=1,
 
 ##변수명 작성 규칙
 1. 이름 앞에 숫자 No 하지만 뒤는 Ok
-=> `var 999qkqj;`  Error
-=> `var qkqj999;`  Ok
+  - => `var 999qkqj;`  Error
+  - => `var qkqj999;`  Ok
 2. 이름 사이의 공백 No  공백대신 언더바
-=> `var my name;` Error
-=> `var my_name;` Ok
+  - => `var my name;` Error
+  - => `var my_name;` Ok
 3. 이름 앞에 특수문자는 $, _ 만 가능
-=> `var ^^#@_name;` Error
-=> `var $name;`  Ok : $가 붙은 변수는 주로 제이쿼리를 담은 변수를 나타냄 
+  - => `var ^^#@_name;` Error
+  - => `var $name;`  Ok : $가 붙은 변수는 주로 제이쿼리를 담은 변수를 나타냄 
 4. 변수명이 모두를 대문자로 사용하지 않는다.
-=> 오류가 발생하는 것은 아니지만 이름이 전부 대문자이면 관례적으로 상수로 인식한다.
-=> `var SMART_PHONE;`  ==> 상수로 인식
-=> 상수선언은  
+  - => 오류가 발생하는 것은 아니지만 이름이 전부 대문자이면 관례적으로 상수로 인식한다.
+  - => `var SMART_PHONE;`  ==> 상수로 인식
+  - => 상수선언은  
 ```
 const 이름 = '값';
 const STORAGE;
 ```
 5. 카멜 케이스(camelCase) 표기법
-: 대문자를 변수 이름에 사용하는 경우는 카멜 케이스 표기법을 따르는 경우가 많다.
-  `var smartPhone;`
+  - 대문자를 변수 이름에 사용하는 경우는 카멜 케이스 표기법을 따르는 경우가 많다.
+  - `var smartPhone;`
 
 
 #변수 값의 할당, 복사, 참조의 구분
 
 1. =  할당의 의미
-`var a = 10;` => 숫자10을 변수 a에 값을 할당하다.
-- 언제든지 값은 변할수 있다.
-- `a = 7 + 2;`  a의 값은 9로 변경됨
+  - `var a = 10;` => 숫자10을 변수 a에 값을 할당하다.
+  - 언제든지 값은 변할수 있다.
+  - `a = 7 + 2;`  a의 값은 9로 변경됨
 
 2. 복사 : 원시데이터형 
 ```
@@ -249,26 +244,26 @@ console.log(food); // ["cake", "coffee", "ice-cream"]
 
 ##원시 데이터 유형
 1. 문자 String
-- 안녕, hi ...
+  - 안녕, hi ...
 2. 숫자 Number
-- 1 , 3.14... , -18 , ... 
+  - 1 , 3.14... , -18 , ... 
 3. 불리언 Boolean, 논리 
-- true, false
+  - true, false
 
 ##복합 데이터 유형
 1. 배열(Array)
-- ['사관','포도','귤']
+  - ['사관','포도','귤']
 2. 함수(Function)
-- function(){...};
+  - function(){...};
 3. 객체(Object)
-- {'name': 'sseom', 'age':'20'...}
+  - {'name': 'sseom', 'age':'20'...}
 
 
 ---
 
 #연산자
 
-##+ 
+##더하기 + 
 - 결합 더하기
 ```
 var lang = 'Language', fun='잼';
@@ -286,15 +281,15 @@ document.write('<h1>'+ lang + fun +'</h1>');
 - 객체.동작(전달인자) == 오브젝트.메서드(아규먼트);
 - 친구가.선물하다('커피');
 
-##alert()
+###alert()
 - 웹브라우져에 경고창 띄움(== 알림창) : 오늘날 잘 사용안함
-`window.alert('hahah');`
+- `window.alert('hahah');`
 
-##console.log()
+###console.log()
 - 웹브라우져 검사 도구로 들어가서 콘솔에서 확인 : 디버깅용
 - 콘솔(console)에 기록(log)하고 싶다.
 
-##document.write()
+###document.write()
 - body영역에 출력
 - 요소(Element) 기입 가능
 
