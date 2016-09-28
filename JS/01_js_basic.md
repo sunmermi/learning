@@ -6,7 +6,9 @@
 
 ###엄격모드 발동 
 : 문법이 엄격함 지키지않으면 오류발생
-- `'use strict';`
+```
+'use strict';
+```
 
 ###dot syntax
 ```
@@ -107,7 +109,7 @@ button.onclick = btnClick;
 
 **PLUS**
 - 바디요소 접근
-  + `var body = document.body;`
+  + `document.body;`
 - 아이디 접근
   + `document.getElementById('아이디명');`
 
@@ -127,7 +129,7 @@ button.onclick = btnClick;
 
 ##변수 선언 방식
 1. 한개의 var 키워드에 변수선언
-`var x, y, z;`
+```var x, y, z;```
 2. 변수선언 : 일반적으로 많이 쓰는 방법
 ```
 var x;
@@ -140,8 +142,8 @@ var x = 10;
 var y = 50;
 ```
 4. var singleton pattern : var 키워드를 한번만 사용하는 코딩 패턴(방법) 
-`var a=1, b=2, c=9;`
-- 개행가능
+```var a=1, b=2, c=9;```
+  - 개행가능
 ```
 var a=1,
     b=2,
@@ -161,11 +163,8 @@ var a=1,
 4. 변수명이 모두를 대문자로 사용하지 않는다.
   - => 오류가 발생하는 것은 아니지만 이름이 전부 대문자이면 관례적으로 상수로 인식한다.
   - => `var SMART_PHONE;`  ==> 상수로 인식
-  - => 상수선언은  
-```
-const 이름 = '값';
-const STORAGE;
-```
+  - => 상수선언은 `const 이름 = '값';`  ==>  `const STORAGE;`
+
 5. 카멜 케이스(camelCase) 표기법
   - 대문자를 변수 이름에 사용하는 경우는 카멜 케이스 표기법을 따르는 경우가 많다.
   - `var smartPhone;`
