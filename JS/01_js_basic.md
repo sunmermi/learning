@@ -129,20 +129,26 @@ button.onclick = btnClick;
 
 ##변수 선언 방식
 1. 한개의 var 키워드에 변수선언
-```var x, y, z;```
+```
+ var x, y, z; 
+```
 2. 변수선언 : 일반적으로 많이 쓰는 방법
 ```
 var x;
 var y;
 var z;
 ```
+
 3. 변수선언과 동시에 값을 할당 : 일반적으로 많이 쓰는 방법
 ```
 var x = 10;
 var y = 50;
 ```
+
 4. var singleton pattern : var 키워드를 한번만 사용하는 코딩 패턴(방법) 
-```var a=1, b=2, c=9;```
+```
+var a=1, b=2, c=9;
+```
   - 개행가능
 ```
 var a=1,
