@@ -47,8 +47,7 @@ front end developer of a study
 
 3. JavaScript
     - Basic and other
-        + 기본
-        + 변수
-        + 데이터 유형
-        + 연산자
-        + method
+    - Variables : 변수
+    - Data Type : 데이터 유형, 데이터 변환
+    - Operator 연산자
+    - ing,,,, 미정리된,, 진행중인 공부 
