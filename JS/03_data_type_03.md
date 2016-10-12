@@ -4,54 +4,54 @@
 - 데이터 타입체크
 
 1. typeof 키워드
-- `typeof 확인할데이터값`
-- `typeof(); // 확인할 데이터값을 묶어줄때 사용` : 함수가 아님
-- **셜계오류**
-    + null, Array를 올바르게 인식하지 못한다 : 셜계오류
-    + 둘 다 모두 'object'를 반환
-    ```
-    var num, str, boo, fnc, arr, obj;
+    - `typeof 확인할데이터값`
+    - `typeof(); // 확인할 데이터값을 묶어줄때 사용` : 함수가 아님
+    - **셜계오류**
+        + null, Array를 올바르게 인식하지 못한다 : 셜계오류
+        + 둘 다 모두 'object'를 반환
+        ```
+        var num, str, boo, fnc, arr, obj;
 
-    num = 10;
-    str = 'javascript';
-    boo = !false;
-    fnc = function(){};
-    arr = [];
-    obj = {};
+        num = 10;
+        str = 'javascript';
+        boo = !false;
+        fnc = function(){};
+        arr = [];
+        obj = {};
 
-    console.log('typeof num:', typeof num);             // 'number'
-    console.log('typeof str:', typeof str);             // 'string'
-    console.log('typeof boo:', typeof boo);             // 'boolean'
-    console.log('typeof fnc:', typeof fnc);             // 'function'
-    console.log('typeof arr:', typeof arr);             // 'array' ??  ==> 'object'
-    console.log('typeof obj:', typeof obj);             // 'object'
-    console.log('typeof undefined:', typeof undefined); // 'undefined'
-    console.log('typeof null:', typeof null);           // 'null' ??  ==> 'object'
-    
-    // typeof() 사용
-    var a = 99; 
-    a + ''; // 문자열 숫자 '99' 출력
-    console.log('typeof a:', typeof(a+'1'));  //'string'           
-    ```
+        console.log('typeof num:', typeof num);             // 'number'
+        console.log('typeof str:', typeof str);             // 'string'
+        console.log('typeof boo:', typeof boo);             // 'boolean'
+        console.log('typeof fnc:', typeof fnc);             // 'function'
+        console.log('typeof arr:', typeof arr);             // 'array' ??  ==> 'object'
+        console.log('typeof obj:', typeof obj);             // 'object'
+        console.log('typeof undefined:', typeof undefined); // 'undefined'
+        console.log('typeof null:', typeof null);           // 'null' ??  ==> 'object'
+        
+        // typeof() 사용
+        var a = 99; 
+        a + ''; // 문자열 숫자 '99' 출력
+        console.log('typeof a:', typeof(a+'1'));  //'string'           
+        ```
 
 
 
 2. instanceof
-- `데이터값 instanceof 데이터유형`
-- 데이터값은 데이터유형의 조각이니? (객체이니? 생성된아이니?)
-- **참고**
-    + 데이터 유형이 무엇인지 대충 알아야 값의 유형을 확인 할 수 있음
-    ```
-    var playlist = new Array();
+    - `데이터값 instanceof 데이터유형`
+    - 데이터값은 데이터유형의 조각이니? (객체이니? 생성된아이니?)
+    - **참고**
+        + 데이터 유형이 무엇인지 대충 알아야 값의 유형을 확인 할 수 있음
+        ```
+        var playlist = new Array();
 
-    // typeof로 데이터유형 확인
-    console.log('typeof playlist:', typeof playlist); // object
+        // typeof로 데이터유형 확인
+        console.log('typeof playlist:', typeof playlist); // object
 
-    // instanceof로 데이터유형 확인
-    // playlist는 Array틑 통해서 만들어진 조각이니?
-    console.log( playlist instanceof Array ); // true
+        // instanceof로 데이터유형 확인
+        // playlist는 Array틑 통해서 만들어진 조각이니?
+        console.log( playlist instanceof Array ); // true
 
-    ```
+        ```
 
 
 ---

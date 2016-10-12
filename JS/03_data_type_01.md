@@ -21,7 +21,7 @@
 3. 불리언 Boolean, 논리 
   - true, false
     + true값 : 아래 false값을 제외한 모든값은 true값을 가짐
-    + false값 : 0, ''(공백없이 빈문자열), null, undefined, NaN
+    + false값 : 0, 'ㅈ(공백없이 빈문자열), null, undefined, NaN
 
 4. undefined 
   - 부정, 정의되지 않았다, 듣보잡, 너 없음.. 이런 뜻

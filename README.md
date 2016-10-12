@@ -48,6 +48,10 @@ front end developer of a study
 3. JavaScript
     - Basic and other
     - Variables : 변수
-    - Data Type : 데이터 유형, 데이터 변환
+    - Data Type :
+        + 01 원시자료 데이터 유형, 데이터변환
+        + 02 참조 데이터 유형, 생성자함수, 리터럴표현식,,
+        + 03 데이터 유형 체크, NaN
     - Operator 연산자
+    - Event
     - ing,,,, 미정리된,, 진행중인 공부 
