@@ -1,4 +1,5 @@
-#자바스크립트 데이터 유형
+#01. 자바스크립트 데이터 유형 (Data Type)
+- 숫자형, 문자형, 불리언형, 객체형, 배열형, 함수형, null, undefined
 
 ##원시 데이터 유형
 1. 문자 String
@@ -59,6 +60,8 @@
 3. 객체(Plain Object)
   - {'name': 'sseom', 'age':'20'...}
 
+==> 참조형 데이터는 다음장에서 계속,,,
+
 ---
 
 #데이터 변환 (Type Casting) == 형변환
@@ -92,6 +95,8 @@
     - parseInt('데이터'); ==> `parseInt('10px'); ==> 10`
   2. parseFloat() 함수에 단위 유형의 문자를 전달 -> 실수(Floating)를 반환
     - parseFloat('데이터'); ==>  `parseFloat('20.3%'); // ==> 20.3`
+    - **주의** 
+      + 브라우져마다 실수 처리 방식이 달라서 정수로 빼는것이 좋음. 특히 디자인이 실수로 되어있을땐 정수로 요청해야함
   3. parseInt(), parseFloat() 사용시 권장사항
     - 8진수 인지 10진수 인지 써주는것을 권장!! 정확하게 수를 출력하기 위해~
       + `console.log(parseInt('100px', 8));` ==> 64 출력
@@ -135,9 +140,55 @@
     ```
 
 4. Boolean값으로 변환
-  - 객체가 있다, 없다의 판별할때 유용함
-  - !  : 데이터의 반대값으로 출력 ==> `!99 // => false`
-  - !! : 데이터의 본래 불린값으로 출력 ==> `!!99 // => true`
+  - 객체가 있다, 없다의 판별할때 유용함 
+  1. Boolean() 함수 사용
+  2. !! 를 데이터 앞에 붙여주는 것 (주로사용)
+    - !  : 데이터의 반대값으로 출력 ==> `!99 // => false`
+    - !! : 데이터의 본래 불린값으로 출력 ==> `!!99 // => true`
+  ```
+  var num = 101,
+      str = 'variable vs constant',
+      nu  = null,
+      un; // 변수 초기값은 undefined
+
+  // Boolean함수 사용 변환
+  console.log( Boolean(num) ); // true
+  console.log( Boolean(str) ); // true
+  console.log( Boolean(nu) );  // false
+  console.log( Boolean(un) );  // false
+  
+  // ! 사용 변환
+  console.log( !num ); // !true -> false
+  console.log( !str ); // !true -> false
+  console.log( !nu );  // !false -> true
+  console.log( !un );  // !false -> true
+
+  // !! 사용 변환
+  console.log( !!num ); // true
+  console.log( !!str ); // true
+  console.log( !!nu );  // false
+  console.log( !!un );  // false
+
+  ```
+
   - *true, false 값을 가진 데이터*
     + true값 : 아래 false값을 제외한 모든값은 true값을 가짐
-    + false값 : 0, ''(공백없이 빈문자열), null, undefined, NaN 
+    + false값 : 0, ''(공백없이 빈문자열), null, undefined, NaN
+
+4. undefined, null 데이터 유형 변경 방법
+- undefined, null 은 객체가 아님. 단지 부정을 뜻함.
+  ```
+  // 문자로 변경 : ''로 감싸거나 , 빈문자열 더하기
+  // 'null', undefined + '', String(null)
+
+  // 불리언으로 변경 : ! 사용
+  // !null, !!undefined
+  // !  : true
+  // !! : false
+
+  // 주의할것!
+  // 숫자로 변경 : 숫자를 더하거나, Number()함수 사용 
+  // undefined는 안됨
+  // null + 9 => 9 출력
+  // Number(null) => 0 출력
+  ```
