@@ -21,7 +21,7 @@
 3. 불리언 Boolean, 논리 
   - true, false
     + true값 : 아래 false값을 제외한 모든값은 true값을 가짐
-    + false값 : 0, 'ㅈ(공백없이 빈문자열), null, undefined, NaN
+    + false값 : 0, ''(공백없이 빈문자열), null, undefined, NaN
 
 4. undefined 
   - 부정, 정의되지 않았다, 듣보잡, 너 없음.. 이런 뜻
@@ -34,7 +34,7 @@
   - 부정, 비어있다.
   ```
   // HTML문서에 아이디명 no-ex 없는데 스크립트가 접근 하려했을때
-  // HTML문서가 다 로딩되지 않은 상태에서 스크립트 코드가 먼저 해석됐을때 접근하면 있지만 찾지못
+  // HTML문서가 다 로딩되지 않은 상태에서 스크립트 코드가 먼저 해석됐을때 접근하면 있지만 찾지 못함
   var no_exist_el = document.getElementById('no-ex');
 
   //이벤트의 초기값 : null
@@ -72,7 +72,7 @@
     - 데이터값 + '' ==>  ` 9119 + '' `
   3. 문자 객체가 소유한 함수(메소드, Method)를 사용 : 명시적
     - 데이터값.toString();  ==>  `999.toString();`
-    - 오류를 발생시키면 데이터를 ()괄호로 감싸서 테스트 == 데이터를 랩핑
+    - 오류를 발생시키면 데이터를 ()괄호로 감싸서 테스트 == 데이터를 랩핑 ==> `(999).toString();`
     - ?? : 999인 숫자인 원시데이터에 toString이란 속성이 어떻게 붙어?
       + 객체에서만 속성이 있고 사용할수 있다며?? 프로퍼티는 객체만 가질수있다며?? 
       + JS엔진이 알아서 999 를 숫자객체인것처럼 인식해서 toString() 매서드를 실행해줌
@@ -170,13 +170,11 @@
   console.log( !!un );  // false
 
   ```
-
   - *true, false 값을 가진 데이터*
     + true값 : 아래 false값을 제외한 모든값은 true값을 가짐
     + false값 : 0, ''(공백없이 빈문자열), null, undefined, NaN
-
 4. undefined, null 데이터 유형 변경 방법
-- undefined, null 은 객체가 아님. 단지 부정을 뜻함.
+  - undefined, null 은 객체가 아님. 단지 부정을 뜻함.
   ```
   // 문자로 변경 : ''로 감싸거나 , 빈문자열 더하기
   // 'null', undefined + '', String(null)

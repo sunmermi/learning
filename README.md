@@ -53,5 +53,9 @@ front end developer of a study
         + 02 참조 데이터 유형, 생성자함수, 리터럴표현식,,
         + 03 데이터 유형 체크, NaN
     - Operator 연산자
-    - Event
-    - ing,,,, 미정리된,, 진행중인 공부 
+    - Condition 조건문 
+        + if(){}, if(){}else{}, if(){}else if(){}else{}
+    - Event 이벤트
+    - Helper Function 사용자 정의 함수
+    - DOM 돔
+    - ing,,,, 미정리된,, 진행중인
