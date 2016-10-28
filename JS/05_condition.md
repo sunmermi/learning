@@ -1,15 +1,18 @@
 #condition 조건문
 
-###1. if 문
+###if 문
 - 조건
     + if(데이터){} , if(!데이터){} 
     + 조건 비교 : >, <, <=, >=, ==, ===, !=, !==, &&, ||
 
-1. 기본
-    - `if( 조건 ){조건이 참이면 실행할 실행문}`
-2. if else문 
-    - `if( 조건 ){조건이 참이면 실행할 실행문}else{ 거짓이면 실행할 구문 }`
-    - 예제
+####1. if 문
+- 기본 문법
+  + `if( 조건 ){조건이 참이면 실행할 실행문}`
+
+####2. if else문
+- 기본문법 
+  + `if( 조건 ){조건이 참이면 실행할 실행문}else{ 거짓이면 실행할 구문 }`
+- 예제
     ```
     var condition = true;
 
@@ -35,8 +38,11 @@
 
     ```
 
-3. if else if문
-    - `if( 조건 ){조건이 참이면 실행할 실행문}else if(다른 조건){}...else{거짓이면 실행할 구문}`
+####3. if else if문
+- 기본문법
+  + `if( 조건 ){조건이 참이면 실행할 실행문}else if(다른 조건){}...else{ 모두 거짓이면 실행할 구문}`
+- 주의 : 조건이 많아지면 느려짐 
+- 예제
     ```
     var rank = 1;
     //rank의 조건문이 1이라면 블록문 {} 수행
@@ -74,7 +80,7 @@
     }
     ```
 
-###※&& , || 조건문 처리
+####※ && , || 조건문 처리
 - if문을 사용하는 것보다 논리연산자를 사용한다면 조건구문이 더욱 간결해짐
 - [04_operator.md 참고](https://github.com/sseom/learning/blob/master/JS/04_operator.md)
 
@@ -90,7 +96,7 @@
     console.log('drink:', drink);
     ```
 
-###※3항연산 조건문 처리
+####※ 3항연산 조건문 처리
 - 기본
     + `조건 ? 조건이 참일때 실행문 : 조건이 거짓일 경우 실행문 ;`
 - 다중 
@@ -133,10 +139,9 @@
     ```
 
 
-
 ---
 
-**※if문 사용 예제**
+**※ if문 사용 예제**
 
 ```
 //------------------- if문 사용전 ----------------------
@@ -187,3 +192,119 @@ slogan.onclick  = mouseEventHandler;
 
 ```
 
+---
+
+###switch문
+
+####switch
+  - 기본문법
+  ```
+  // 케이스의 값과 switch(표현식)을 비교해서 
+  // 일치하면 실행
+  switch (expression) {
+    case 1: 실행 구문;
+    case 2: 실행 구문;
+    // case 2개에 한개의 실행구문 사용 가능
+    case 3:
+    case 4: 실행 구문;
+    //위 케이스 구문들이 다 일치 하지 않다는 다면 default구문 실
+    default : 실행 구문;
+  }
+  ```
+
+  - 주의점
+    + default 하단에 넣어줄것!!
+      * 상단에 있으면 default구문이 실행되고 아래 case구문들도 모두 실행됨
+  ```
+    var console_style = 'color: pink; font-size: 18px;';
+    var condition = 'haha';
+
+    switch(condition){
+      default : console.log('%cnono', console_style);
+      case 'cup': 
+        console.log('%cthis is cup', console_style);
+      case 'pen': 
+        console.log('%cthis is pen', console_style);
+      // 케이스 2개에 한개의 실행구문
+      case 'double': 
+      case 'remote': 
+        console.log('%cthey are double and remote', console_style);
+    }
+  ```
+
+    + case 구문에 break !!!
+      * break가 없다면 case가 참인 구문부터는 아래구문까지 모두 출력
+    ```
+    var console_style = 'color: pink; font-size: 18px;';
+    var condition = 'cup';
+
+    switch(condition){
+      case 'cup': 
+        console.log('%cthis is cup', console_style);
+      break;
+      case 'pen': 
+        console.log('%cthis is pen', console_style);
+      break;
+      case 'double': 
+      case 'remote': 
+        console.log('%cthey are double and remote', console_style);
+      break;
+      default : console.log('%cnono', console_style);
+    }
+    ```
+
+    + case문이 연산이라면,,,
+      * if문 과의 비교 : if(조건) 괄호 조건이 불리언값으로 반환되서 실행문이 실행여부를 결정
+      * 연산하는 결과는 불린값을 반환하는데 표현식이 트루라 되어있으면 되지만
+    + switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
+    ```
+    var count = 9;
+    var counter = [8, 5, 2, -10, 9];
+
+    //---------- 예제 1 ----------
+    switch(count){
+       case count > 10:
+         console.log('count는 10보다 크다.');
+       break;
+      case count < 10 : 
+        console.log('10보다 작다');
+      break;
+    }
+    // ==> 출력안됨 
+    // 왜? count 는 숫자 9 이고
+    // case의 경우 연산결과로 결과 값을 불리언으로 반환 : true
+    // count < 10 는 맞긴 하지만 count와 동일하지 않다
+    // count 는 불리언값과 동일하다고 볼수 없어서 실행이 안된다.
+    // 만약 switch(true) 조건을 비교 하고 있었으면 수행될 수 있다.
+
+    //---------- 예제 2 ----------
+    switch(count){
+      case counter[counter.length -1] :
+        console.log('counter 는 숫자 9이다');
+      break;
+      case count < 10 : 
+        console.log('10보다 작다');
+      break;
+    }
+    // ==> 케이스 1 counter는 숫자 9를 나타내서 => 참 
+    // 'counter 는 숫자 9이다'  출력
+
+    //---------- 예제 3 ----------
+    var count = '9';
+    var counter = [8, 5, 2, -10, 9];
+
+    switch(count){
+      // counter.length ==> 5 개
+      case counter[counter.length -1] :
+        console.log('counter 는 숫자 9이다');
+      break;
+      case count < 10 : 
+        console.log('10보다 작다');
+      break;
+    }
+    // ==> 출력안됨 
+    // 왜?
+    // switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
+    // count는 문자열 9  , 케이스 counter는 숫자 9를 나타냄
+    // 데이터타입이 일치하지 않는다.
+    ```

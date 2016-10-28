@@ -103,7 +103,7 @@
     console.log('obj.constructor : ', obj.constructor );
 
     // 불리언값으로 반환 ==> 모두 true 출
-    console.log('num.constructor === Number : ', num.constructor =력== Number);
+    console.log('num.constructor === Number : ', num.constructor === Number);
     
     // null, undefined 체크 불가
     console.log('null.constructor : ', null.constructor);
