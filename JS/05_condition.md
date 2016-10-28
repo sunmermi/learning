@@ -231,7 +231,6 @@ slogan.onclick  = mouseEventHandler;
         console.log('%cthey are double and remote', console_style);
     }
   ```
-
     + case 구문에 break !!!
       * break가 없다면 case가 참인 구문부터는 아래구문까지 모두 출력
     ```
@@ -252,7 +251,6 @@ slogan.onclick  = mouseEventHandler;
       default : console.log('%cnono', console_style);
     }
     ```
-
     + case문이 연산이라면,,,
       * if문 과의 비교 : if(조건) 괄호 조건이 불리언값으로 반환되서 실행문이 실행여부를 결정
       * 연산하는 결과는 불린값을 반환하는데 표현식이 트루라 되어있으면 되지만

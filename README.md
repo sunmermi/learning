@@ -55,7 +55,10 @@ front end developer of a study
     - Operator 연산자
     - Condition 조건문 
         + if(){}, if(){}else{}, if(){}else if(){}else{}
+    - Loop 반복문
+        + while(){} , do{}while(), for(){}
     - Event 이벤트
+        + Event_ex 이벤트 예제
     - Helper Function 사용자 정의 함수
     - DOM 돔
     - ing,,,, 미정리된,, 진행중인
