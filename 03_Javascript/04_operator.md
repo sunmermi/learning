@@ -1,17 +1,61 @@
 #연산자
 
 ###대입(할당) 연산자
+- `A = B ;`
 - 오른편에 있는 값을 왼편의 변수에 대입(할당)하다 [값 복사|참조]
 
 ###산술 연산자
-- 결합 더하기 (+)
+- 결합 더하기 ( A + B )
+- 빼기 ( A - B )
+- 곱하기 ( A * B )
+- 나누기 ( A / B )
 ```
+// 더하기 ( A + B )
 var lang = 'Language', fun='잼';
 
 document.write('<h1>'+ lang + fun +'</h1>');
 
 // 출력 : Language잼
+
 ```
+
+- 나머지 ( A % B )
+    + 값 % 2 : 나머지 값은 2개 : 0,1 반환
+    + 값 % 3 : 나머지 값은 3개 : 0,1,2 반환
+    + 값 % 5 : 나머지 값은 5개 : 0,1,2,3,4 반환
+    + ==> 값이 계속 달라져도 나머생지 값은 나눈값의 갯수 만큼만 나머지 숫자 발생
+```
+var msg_count =0;
+var msg =[];
+msg.push('this is function object');
+msg.push('Function object has an attribute');
+msg.push('Function objects can be invoked later');
+
+// console.log(msg);
+
+function printFunMsg(){
+  // console.log(msg[msg_count]);
+  return msg[msg_count++ % msg.length];
+  // msg_count = (msg_count+1) % msg.length;
+  // msg_count = msg_count++ % msg.length;
+  // msg_count = (0) % 3; // 0
+  // msg_count = (1) % 3; // 1
+  // msg_count = (2) % 3; // 2
+  // msg_count = (3) % 3; // 0
+  // msg_count = (4) % 3; // 1
+  // msg_count = (5) % 3; // 2
+  // msg_count = (6) % 3; // 0
+  // ,,,,,,,,,,, N ,,,,
+}
+
+printFunMsg();
+printFunMsg();
+printFunMsg();
+printFunMsg();
+printFunMsg();
+
+```
+
 
 ###비교 연산자 (Compare Operator)
 ```
@@ -65,13 +109,13 @@ document.write('<h1>'+ lang + fun +'</h1>');
     1. && : AND
         - 그리고
         - 두 값이 모두 참일때 true
-        - 처음 나오는 거짓 값이 우선
-        - 값이 모두 참이면 마지막 참값이 우선
+        - 처음 나오는 거짓 값이 반환
+        - 값이 모두 참이면 마지막 참값이 반환
     2. || : OR
         - 또는
         - 두개의 값중 한개의 값만 참이여도 true
-        - 처음 나오는 참값이 우선
-        - 모두 거짓이면 마지막 거짓값 우선
+        - 처음 나오는 참값이 반환
+        - 모두 거짓이면 마지막 거짓값 반환
     3. 참고 설명
         - 여기에서 맨처음 이라는것은 비교 데이터의 처음 순서를 말하는 것이 아니라
         - ==> 데이터들의 조건이 거짓과 진실중에서 처음나온건지 마지막에 나온건지를 말함
@@ -92,7 +136,7 @@ document.write('<h1>'+ lang + fun +'</h1>');
 
     ```
 
-    4. **※if조건문 대신 논리연산자로 조건구문 처리방법**
+    4. **※ if조건문 대신 논리연산자로 조건구문 처리방법**
     ```
     // && , || 조건구문 처리
 
@@ -115,3 +159,17 @@ document.write('<h1>'+ lang + fun +'</h1>');
 
 
     ```
+
+###증감연산자
+- ++ 증가
+    + A++ : 후증가
+    + ++A : 선증가
+- -- 감소
+    + A-- : 후감소
+    + --A : 선감소
+```
+// 표현방식이 다를뿐 다 같음
+i++ ;
+i = i+1 ;
+i += 1 ;
+```

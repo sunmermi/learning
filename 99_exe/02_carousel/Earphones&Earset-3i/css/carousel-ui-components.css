@@ -1,0 +1,181 @@
+/* common style module */
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.ir{ /* Image Replacement : 이미지대체 기법*/
+  overflow: hidden;
+  text-indent: -9999em;
+}
+
+.readable-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip:     rect(0,0,0,0);
+  width:    1px;
+  height:   1px;
+  margin:   -1px;
+  border:   0;
+  padding:  0;
+}
+
+.readable-hidden.focusable:focus {
+  overflow: visible;
+  position: static;
+  clip:     auto;
+  width:    auto;
+  height:   auto;
+  margin:   0;
+}
+
+/* browser style initialization */
+/* reset */
+html{
+  /* 스크롤바 축이 안움직이게 */
+  overflow-y: scroll;
+  /* 글씨를 이쁘고 깔금하게 보여주는 : smoothing */
+  /* -----------------------------------------------
+   * 폰트 안티앨리어싱(font-smoothing): 글자 처리 부드럽게
+   * none | subpixel-antialiased | antialiased
+   * http://files.christophzillgens.com/webkit-font-smoothing.html
+   * http://maxvoltar.com/sandbox/fontsmoothing/
+   * http://www.icondeposit.com/blog:how-to-properly-smooth-font-using-css3
+   -------------------------------------------------
+   * font smooting for windows
+   * http://forum.cockos.com/showthread.php?t=126465
+   * -------------------------------------------- */
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* webfont */
+.novaT{font-family: 'proximanova thin';}
+.novaR{font-family: 'proximanova regular';}
+.novaB{font-family: 'proximanova bold';}
+
+/* carousel-component-ui */
+.carousel-container{
+  position: relative;
+  width: 700px;
+  height: auto;
+  /*overflow-x: scroll;*/
+  overflow: hidden;
+  outline: 3px solid #eee;
+}
+.carousel-container img{
+  width: 100vw;
+  height: auto;
+}
+.carousel-container button{
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  z-index: 1000;
+}
+.carousel-container button:focus{
+  /*아웃라인 동그랗게  보이도록 디자인 */
+  /*기존의 아웃라인 모양은 없애고 : 브라우져마다 디자인 다름*/
+  outline: none;
+  outline-offset: 0.3em;
+  box-shadow: 0 0 0 4px hsla(198, 82%, 47%, 0.3);
+}
+
+/* carousel-indicator */
+.carousel-indicator{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+.carousel-indicator button{
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #696969;
+  transition: all 0.3s ease-out;
+}
+.carousel-indicator .active-tab{
+  background: #f8f8f8;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px hsla(0, 0%, 41%, 0.25);
+}
+.carousel-indicator button:hover{background: #323232;}
+.carousel-indicator button:active{
+  outline-offset: 0.3em;
+  box-shadow: 0 0 0 4px hsla(78, 82%, 62%, 0.2);
+}
+
+/* .carousel-navigation */
+.carousel-navigation button{
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  background: #212121;
+  border-radius: 50%;
+}
+.carousel-navigation button::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  width: 8px;
+  height: 8px;
+  /*background: #454545;*/
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity: 0.7;
+  transition: all 0.4s ease-out;
+}
+.carousel-navigation button:hover::before{
+  opacity: 1;
+}
+.carousel-navigation .carousel-previous-btn{left: 20px;}
+.carousel-navigation .carousel-next-btn{right: 20px;}
+.carousel-navigation .carousel-previous-btn::before{
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+
+}
+.carousel-navigation .carousel-next-btn::before{
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+/* carousel-view */
+.carousel-view{
+  transition: all 0.4s ease-out;
+}
+.carousel-view img{
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -212,9 +212,9 @@ slogan.onclick  = mouseEventHandler;
   }
   ```
 
-  - 주의점
-    + default 하단에 넣어줄것!!
-      * 상단에 있으면 default구문이 실행되고 아래 case구문들도 모두 실행됨
+  - **주의점**
+    1. default 하단에 넣어줄것!!
+      - 상단에 있으면 default구문이 실행되고 아래 case구문들도 모두 실행됨
   ```
     var console_style = 'color: pink; font-size: 18px;';
     var condition = 'haha';
@@ -231,8 +231,9 @@ slogan.onclick  = mouseEventHandler;
         console.log('%cthey are double and remote', console_style);
     }
   ```
-    + case 구문에 break !!!
-      * break가 없다면 case가 참인 구문부터는 아래구문까지 모두 출력
+    
+    2. case 구문에 break !!!
+      - break가 없다면 case가 참인 구문부터는 아래구문까지 모두 출력
     ```
     var console_style = 'color: pink; font-size: 18px;';
     var condition = 'cup';
@@ -251,10 +252,11 @@ slogan.onclick  = mouseEventHandler;
       default : console.log('%cnono', console_style);
     }
     ```
-    + case문이 연산이라면,,,
-      * if문 과의 비교 : if(조건) 괄호 조건이 불리언값으로 반환되서 실행문이 실행여부를 결정
-      * 연산하는 결과는 불린값을 반환하는데 표현식이 트루라 되어있으면 되지만
-    + switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
+    
+    3. case문이 연산이라면,,,
+      - if문 과의 비교 : if(조건) 괄호 조건이 불리언값으로 반환되서 실행문이 실행여부를 결정
+      - 연산하는 결과는 불린값을 반환하는데 표현식이 트루라 되어있으면 되지만
+      - switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
     ```
     var count = 9;
     var counter = [8, 5, 2, -10, 9];

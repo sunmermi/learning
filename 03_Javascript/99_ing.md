@@ -31,4 +31,17 @@
 
 ---
 
-
+##attribute property 차이
+- attribute : HTML의 속성을 취급 
+  + 값이 모두 String 으로 넘어옴.
+  + 변하지 않고 초기 (default)값을 전달한다는 것은 의미
+  + el.getAttribute( 'checked' ) // 'checked'
+  + $( el ).attr( 'href' ) // 값을 문자열로 반환
+- property : HTML DOM 트리에 있는 것
+  + JavaScript 프로파티을 취급 
+    * boolean, date, function 등 반환값을 가져옴
+  + HTML properties는 변할 수 있다
+  + el.checked // true or false
+  + $( el ).prop( 'href' ) // 값과 절대주소 반환 
+- **참고 블러그**
+  + [attr() Vs prop()](http://webclub.tistory.com/118)

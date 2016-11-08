@@ -1,0 +1,24 @@
+/*
+로컬에있으면 로컬로 가져오고  없으면 온라인으로 가져와
+*/
+
+@font-face{
+  font-family: 'proximanova thin';
+  font-weight: 200;
+  font-style: normal;
+  src: local('proximanova-thin-webfont.woff'), url('./proximanova-thin-webfont.woff') format("woff");
+}
+
+@font-face{
+  font-family: 'proximanova regular';
+  font-weight: 400;
+  font-style: normal;
+  src: local('proximanova-regular-webfont.woff'), url('./proximanova-regular-webfont.woff') format("woff");
+}
+
+@font-face{
+  font-family: 'proximanova bold';
+  font-weight: 700;
+  font-style: normal;
+  src: local('proximanova-bold-webfont.woff'), url('./proximanova-bold-webfont.woff') format("woff");
+}

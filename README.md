@@ -59,6 +59,25 @@ front end developer of a study
         + while(){} , do{}while(), for(){}
     - Event 이벤트
         + Event_ex 이벤트 예제
-    - Helper Function 사용자 정의 함수
+    - Function 함수
     - DOM 돔
     - ing,,,, 미정리된,, 진행중인
+    - Helper Function 사용자 정의 함수
+
+---
+
+99. example
+    1. 아이어맨 메세지 
+        - JS
+            + 버튼 이벤트 : 클릭시 메세지 출력
+            + 오디오 객체 생성과  컨트롤
+        - CSS
+            + 애니메이션, 트랜스폼, 트랜지션, 플렉스박스 등
+    2. carousel
+        - Earphones&Earset-3i
+            + JS
+                * indicator, control 버튼 조작
+                * 콘텐츠(혹은 윈도우) 너비에 따른 이미지 너비 조작 및 나열
+                * 등
+            + CSS
+                * 트랜스폼, 트랜지션, 플렉스박스, 요소 초기화, ir기법 등,,, 

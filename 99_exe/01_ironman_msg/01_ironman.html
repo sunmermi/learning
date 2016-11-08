@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>아이어맨 사운드</title>
+  <!-- 웹 폰트 로드 -->
+  <link rel="stylesheet" href="fonts/you_and_i_modern/you_and_i_modern.css">
+  <!-- 폰트어썸 로드 -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- 아이언맨 로봇 스타일 -->
+  <link rel="stylesheet" type="text/css" href="css/ironman.css">
+</head>
+<body>
+
+  <div class="ironman">
+    <p class="message">Function objects can be invoked later.</p>
+    <button type="button" class="ironman_print_button">
+      <img src="images/ironman.png" alt="ironman" width="256" height="256">
+    </button>
+    <p class="play_sound_title"></p>
+    <button class="sound_control_button fa fa-play-circle" title="재생 버튼" aria-label="재생"></button>
+    <button class="sound_control_button fa fa-pause-circle" title="일시정지 버튼" aria-label="일시정지"></button>
+    <button class="sound_control_button fa fa-stop-circle" title="정지 버튼" aria-label="정지"></button>
+  </div>
+
+<!-- HTML5  audio요소는  ie9이상 지원 -->
+<!-- autoplay : 자동재생인데 좋지 않다. 사용자에게 컨트롤 하도록 선택을 주는것이 좋음.  -->
+<!-- controls : 사용자가 제어 가능한 컨트롤러 화면에 표기됨. 컨트롤 버튼은 브라우져마다 디자인이 다름 -->
+<!-- loop : 반복횟수 설정-->
+
+<!--   <audio src="media/special.mp3" controls>
+    지원되지않은 브라우져에선 오디오를 다운받을 수 있게 아래와 같이 설정해줌
+    <a href="media/special.mp3">special.mp3</a>
+  </audio> -->
+
+<!-- 
+
+  - 난!!
+    + 오디오 요소는 자바스크립트로 제어함 
+    + 필요에 따라 어떤방법을 쓰든 상관없지만 마크업상에 추가 하고 싶지 않다.
+    + 런타임중에 실행하고 싶음
+
+ -->
+
+  <!-- <button class="target">Drink a Milk.</button> -->
+
+  <!-- 아이언맨 스크립트 -->
+  <script src="js/01_print_messge_ironman.js"></script>
+  <script src="js/01_sound_control_ironman.js"></script>
+
+</body>
+</html>
