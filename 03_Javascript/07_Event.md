@@ -1,11 +1,11 @@
 #이벤트 
 
 1. 이벤트를 추가
-- 이벤트의 초기 값은 null
-- 코드가 실행되는 시점(Event)을 감지하여 코드를 처리
-- Event property, Event handler(==이벤트리스너), binding(묶다)
-    + 문서대상객체.이벤트속성=이벤트핸들러(함수)
-    + document.onclick = function(){...}; 
+  - 이벤트의 초기 값은 null
+  - 코드가 실행되는 시점(Event)을 감지하여 코드를 처리
+  - Event property, Event handler(==이벤트리스너), binding(묶다)
+      + 문서대상객체.이벤트속성=이벤트핸들러(함수)
+      + document.onclick = function(){...}; 
 ```
 // 윈도우 객체의 이벤트 속성(Event Property)
 window.onload = function(){ 이벤트 발생시 실행 구문 }

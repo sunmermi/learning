@@ -215,96 +215,96 @@ slogan.onclick  = mouseEventHandler;
   - **주의점**
     1. default 하단에 넣어줄것!!
       - 상단에 있으면 default구문이 실행되고 아래 case구문들도 모두 실행됨
-  ```
-    var console_style = 'color: pink; font-size: 18px;';
-    var condition = 'haha';
+    ```
+      var console_style = 'color: pink; font-size: 18px;';
+      var condition = 'haha';
 
-    switch(condition){
-      default : console.log('%cnono', console_style);
-      case 'cup': 
-        console.log('%cthis is cup', console_style);
-      case 'pen': 
-        console.log('%cthis is pen', console_style);
-      // 케이스 2개에 한개의 실행구문
-      case 'double': 
-      case 'remote': 
-        console.log('%cthey are double and remote', console_style);
-    }
-  ```
+      switch(condition){
+        default : console.log('%cnono', console_style);
+        case 'cup': 
+          console.log('%cthis is cup', console_style);
+        case 'pen': 
+          console.log('%cthis is pen', console_style);
+        // 케이스 2개에 한개의 실행구문
+        case 'double': 
+        case 'remote': 
+          console.log('%cthey are double and remote', console_style);
+      }
+    ```
     
     2. case 구문에 break !!!
       - break가 없다면 case가 참인 구문부터는 아래구문까지 모두 출력
-    ```
-    var console_style = 'color: pink; font-size: 18px;';
-    var condition = 'cup';
+      ```
+      var console_style = 'color: pink; font-size: 18px;';
+      var condition = 'cup';
 
-    switch(condition){
-      case 'cup': 
-        console.log('%cthis is cup', console_style);
-      break;
-      case 'pen': 
-        console.log('%cthis is pen', console_style);
-      break;
-      case 'double': 
-      case 'remote': 
-        console.log('%cthey are double and remote', console_style);
-      break;
-      default : console.log('%cnono', console_style);
-    }
-    ```
+      switch(condition){
+        case 'cup': 
+          console.log('%cthis is cup', console_style);
+        break;
+        case 'pen': 
+          console.log('%cthis is pen', console_style);
+        break;
+        case 'double': 
+        case 'remote': 
+          console.log('%cthey are double and remote', console_style);
+        break;
+        default : console.log('%cnono', console_style);
+      }
+      ```
     
     3. case문이 연산이라면,,,
       - if문 과의 비교 : if(조건) 괄호 조건이 불리언값으로 반환되서 실행문이 실행여부를 결정
       - 연산하는 결과는 불린값을 반환하는데 표현식이 트루라 되어있으면 되지만
       - switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
-    ```
-    var count = 9;
-    var counter = [8, 5, 2, -10, 9];
+      ```
+      var count = 9;
+      var counter = [8, 5, 2, -10, 9];
 
-    //---------- 예제 1 ----------
-    switch(count){
-       case count > 10:
-         console.log('count는 10보다 크다.');
-       break;
-      case count < 10 : 
-        console.log('10보다 작다');
-      break;
-    }
-    // ==> 출력안됨 
-    // 왜? count 는 숫자 9 이고
-    // case의 경우 연산결과로 결과 값을 불리언으로 반환 : true
-    // count < 10 는 맞긴 하지만 count와 동일하지 않다
-    // count 는 불리언값과 동일하다고 볼수 없어서 실행이 안된다.
-    // 만약 switch(true) 조건을 비교 하고 있었으면 수행될 수 있다.
+      //---------- 예제 1 ----------
+      switch(count){
+         case count > 10:
+           console.log('count는 10보다 크다.');
+         break;
+        case count < 10 : 
+          console.log('10보다 작다');
+        break;
+      }
+      // ==> 출력안됨 
+      // 왜? count 는 숫자 9 이고
+      // case의 경우 연산결과로 결과 값을 불리언으로 반환 : true
+      // count < 10 는 맞긴 하지만 count와 동일하지 않다
+      // count 는 불리언값과 동일하다고 볼수 없어서 실행이 안된다.
+      // 만약 switch(true) 조건을 비교 하고 있었으면 수행될 수 있다.
 
-    //---------- 예제 2 ----------
-    switch(count){
-      case counter[counter.length -1] :
-        console.log('counter 는 숫자 9이다');
-      break;
-      case count < 10 : 
-        console.log('10보다 작다');
-      break;
-    }
-    // ==> 케이스 1 counter는 숫자 9를 나타내서 => 참 
-    // 'counter 는 숫자 9이다'  출력
+      //---------- 예제 2 ----------
+      switch(count){
+        case counter[counter.length -1] :
+          console.log('counter 는 숫자 9이다');
+        break;
+        case count < 10 : 
+          console.log('10보다 작다');
+        break;
+      }
+      // ==> 케이스 1 counter는 숫자 9를 나타내서 => 참 
+      // 'counter 는 숫자 9이다'  출력
 
-    //---------- 예제 3 ----------
-    var count = '9';
-    var counter = [8, 5, 2, -10, 9];
+      //---------- 예제 3 ----------
+      var count = '9';
+      var counter = [8, 5, 2, -10, 9];
 
-    switch(count){
-      // counter.length ==> 5 개
-      case counter[counter.length -1] :
-        console.log('counter 는 숫자 9이다');
-      break;
-      case count < 10 : 
-        console.log('10보다 작다');
-      break;
-    }
-    // ==> 출력안됨 
-    // 왜?
-    // switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
-    // count는 문자열 9  , 케이스 counter는 숫자 9를 나타냄
-    // 데이터타입이 일치하지 않는다.
-    ```
+      switch(count){
+        // counter.length ==> 5 개
+        case counter[counter.length -1] :
+          console.log('counter 는 숫자 9이다');
+        break;
+        case count < 10 : 
+          console.log('10보다 작다');
+        break;
+      }
+      // ==> 출력안됨 
+      // 왜?
+      // switch 구문에서는 값 비교 시 엄격한 비교를 수행한다.
+      // count는 문자열 9  , 케이스 counter는 숫자 9를 나타냄
+      // 데이터타입이 일치하지 않는다.
+      ```
