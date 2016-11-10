@@ -31,7 +31,7 @@
 
 ---
 
-##attribute property 차이
+##attribute 와 property 차이
 - attribute : 정적
   + HTML 속성들은 attribute 
   + 값이 모두 String 으로 넘어옴.
