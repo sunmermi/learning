@@ -1,14 +1,53 @@
-#자바스크립트 기본
+#자바스크립트 
+
+###기본
+- 자바스크립트 정식 명칭 ECMAScript
+- 자바스크립트 기본문법
+    + 대소문자구분
+    + 유니코드 기반, 영어 아닌 다른 언어도 코드 안에서 사용 가능
+      * 유니코드 - 유사이래 모든!!(고대한글도) 문자를 표현하는게 목표
+    + 명령어는 문장을 구성됨 typeof 등
+    + 스페이스, 탭, 줄바꿈 문자는 공백(white-space)라 부름
+- `<script type="text/javascript">마임타입!</script>`
+    + 스크립트 코드 위치에 따라 눈에 보이는 페이지 로딩 속도가 달라보임!
+    + 스크립트가 위쪽에 있으면 아래 html문서가 로딩되지 않아서 늦게 뜨는것처럼 보임
 
 ###주석
 - // 한줄
 - /*   */  여러줄 주석
 
 ###엄격모드 발동 
-: 문법이 엄격함 지키지않으면 오류발생
-```
-'use strict';
-```
+- 문법이 엄격함 지키지않으면 오류발생  :  ` 'use strict'; `
+- **일반 vs 엄격 모드 때의 this가 가르키는것**
+  ```
+  // 일반적인 방법
+  (function(aa){
+     console.log('this는 뭐니',this);
+  })(this);
+
+  ==> this는 뭐니 ?
+  Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage, sessionStorage: Storage, webkitStorageInfo: DeprecatedStorageInfo…}
+
+  // 엄격모드 발동
+  (function(aa){
+  'use strict'
+     console.log('this는 뭐니',this);
+  })(this);
+
+  ==>  this는 뭐니?  undefined
+
+
+  (function(aa){
+  'use strict'
+     console.log('this는 뭐니',this);
+     console.log('aa는 뭐니',aa);
+  })(this);
+  ==> 출력  this는 뭐니 undefined
+  ==> 출력   aa는 뭐니 Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage, sessionStorage: Storage, webkitStorageInfo: DeprecatedStorageInfo…}
+  undefined
+
+  ```
+
 
 ###dot syntax
 ```

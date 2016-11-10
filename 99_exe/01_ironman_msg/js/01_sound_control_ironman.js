@@ -52,7 +52,8 @@ play_sound_title.innerHTML = play_sound_path;
 // 랜덤 넘버 가져오는 사용자 함수
 function getRandomNumber( n ) {
   // floor 무조건 내림 == 절삭
-  // ceil 무조건 올림, round .5는 이상은 올림 .4이하는 내림
+  // ceil 무조건 올림
+  // round 반올림 : .5는 이상은 올림 .4이하는 내림
   return Math.floor(Math.random() * n)
 }
 
