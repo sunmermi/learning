@@ -1,96 +1,79 @@
-##method
-- 기능을 가진 함수
-- 동사형태(); 
-- 객체.동작(전달인자) == 오브젝트.메서드(아규먼트);
-- 친구가.선물하다('커피');
+###코드 모듈화 할때,,
 
-###alert()
-- 웹브라우져에 경고창 띄움(== 알림창) : 오늘날 잘 사용안함
-- `window.alert('hahah');`
+1. 초기화 단계
+- 사용자가 요청하면 서버에서 데이터를 다운받아서 엔진이 해석을 하고 화면에 렌더링이 되는데 그 단계가 초기화단계이다.
 
-###console.log()
-- 웹브라우져 검사 도구로 들어가서 콘솔에서 확인 : 디버깅용
-- 콘솔(console)에 기록(log)하고 싶다.
+```
+// index.html 코드
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <script src="js/script.js"></script>  ==> ERROR
+  </head>
+  <body>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+```
+
+- 지금 코드는 스크립트 코드를 body요소 하단에 선언했는데
+- head안에 스크립트 코드를 선언하면 렌더링이 되지 않은 상태여서 스크립트는 대상들을 못찾음. (변수들은 비어있음.)
+  + **해결은 : onload 이벤트**
+  + 초기화 할 대상들을 함수로 묶어줘(그룹화) 그리고 
+  + 웹부라우져에 실행문서가 다 로딩된 시점에 온로드 이벤트를 걸어서 함수 실행
+
+```
+// js/script.js 코드
+
+//윈도우가 로드가 되는 시점에 init함수를 실행하라
+window.onload = init;
+
+// 초기화(Init, Initialization)
+// init() 함수는 원래 기존에 있던 코드들을 그룹화만 했을뿐이다.
+function init() { }
+
+// ==> head안에 스크립트 코드를 선언해도 잘 작동한다.
+```
+
+--- 
+
+###자바스로 스타일을 설정할때
+
+1. 방법 1
   ```
-  console.log(   '기록'    );
-  console.info(  '정보표시'  );
-  console.error( '에러 출력' );
-  console.dir(   '분석'    );
+  대상.style.fontSize = 20px;
+  대상.style.color = #fff;
+  대상.style.width = 20px;
+
+  // 값은 문자열로!!! 
+  // 단위가 있다면 단위 붙여야함!! 
+  // 스타일 속성은 낙타표기법으로!!
   ```
 
-###document.write()
-- body영역에 출력
-- 요소(Element) 기입 가능
+2. 방법 2 : 한번에 작성 하는 방법 : 구버전은 개행이 안됨  한줄로 써야함
+`대상.style.cssText = ' width: auto; height: auto; margin: 0; ';`
 
-###trim()
-- 공백제거
-  + 따옴표 안에서 글자공백을 제거하는데 모든 공백을 제거 하는것이 아니라
-  + `'     hahaha  haha   hah  hum,,,,   '`
-  + ==> `'hahaha  haha   hah  hum,,,,'`  출력
-  + 따옴표와 문장 사이의 불필요한 공백을 제거해줌 
-
----
-
-##attribute 와 property 차이
-- attribute : 정적
-  + HTML 속성들은 attribute 
-  + 값이 모두 String 으로 넘어옴.
-  + 변하지 않고 초기 (default)값을 전달한다는 것은 의미
-  + el.getAttribute( 'checked' ) // 'checked'
-  + $( el ).attr( 'href' ) // 값을 문자열로 반환
-- property : 동적
-  + CSS JS 에서의 속성들은 property 라고 불림
-  + 프로퍼티는 객체 안에 들어있는 { 이름: 값 } 이름과 값의 쌍 묶음. 
-  + JavaScript 프로파티을 취급 
-    * boolean, date, function 등 반환값을 가져옴
-  + HTML properties는 변할 수 있다
-  + el.checked // true or false
-  + $( el ).prop( 'href' ) // 값과 절대주소 반환 
-- **참고 블러그**
-  + [attr() Vs prop()](http://webclub.tistory.com/118)
-
----
-
-##Standard built-in objects 내장객체
-- [MDN 내장객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects)
-- 자바스크립트에는 많은 내장 객체가 있다. 
-  + 수학, 데이타, 제이슨, 정규표현식,,, 등등
-  + 모든객체들을 외우려고 하지말고 필요할 때 잘 찾아 쓸것
-
-1. Math : 수학관련 기능을 가진 기본 객체
-  - Math.PI : 3.141592653589793 
-  - Math.random() : 랜덤한 실수 0 ~ 0.999999 까지 (1은 포함이 안됨)
-    + 왜? 1은 포함하지 않는 걸까??
-  - Math.ceil(), Math.round(), Math.floor() : 올림, 반올림, 내림
-    + floor 와 ceil, round 뭘 써야할까 이슈가 있음
-    + floor() : 1이 나올 확율이 없음 
-      * 왜? 소숫점을 부조건 절삭하니까
-    + ceil() : 0이 나올 확율이 엄청 낮음
-      * 왜? 소숫점 무조건 올림 하니까, 하지만 딱 0이 나올 활율이 있다는거!
-  - Math.max(), Math.min() : 최대값, 최소값
+3. 방법 3 : join() 사용해야함.
   ```
-  function add(a,b){
-    var max = Math.max(a,b);
-    var min = Math.min(a,b);
-    var result = Math.round((Math.random()* (max-min)))+min;
-    return result;
-  }
-  add(2,4);
-  // 2
-
-  //------------------------------------------------------
-  // 1 ~ 3 반환을 원한다면
-
-  Math.floor((Math.random()*3 +1);
-  // - random에서 0 이 나오면 + 1 =  1
-  // - random에서 1 이 나오면 + 2 =  2
-  // - random에서 2 이 나오면 + 3 =  3
-
-  Math.ceil((Math.random()*3);
-  // 그러나 확율이 낮은 0이 나올수 있음 그러니 ceil 보단 floor사용 권장
-
-  Math.round((Math.random()*3 +1);
-  // round 는 1 ~ 4를 반환하게됨, +1이 없을땐 0 ~ 3을 반환
-
+  대상.style.cssText = [
+    'width:  auto;',
+    'height: auto;',
+    'margin: 0;'
+  ].join();
   ```
+
+4. `` 자바스 최신기술 백택 : 크로스브라우징안됨
+  ```
+  대상.style.cssText = `
+    width:    auto;
+    height:   auto;
+    margin:   0;
+  `;
+  ```
+
+
 

@@ -47,30 +47,30 @@
 
 ###JSON객체 API(Application Programming Interface)
 1. JSON.parse('데이터')
-- JSON객체의 parse() 메서드를 사용
-- 인자로 전달된 JSON 문자열 데이터를 자바스크립트의 객체 데이터로 변환
-- JSON 문자열 데이터 -> JS 객체 데이터
-```
-JSON.parse('json_data');
+    + JSON객체의 parse() 메서드를 사용
+    + 인자로 전달된 JSON 문자열 데이터를 자바스크립트의 객체 데이터로 변환
+    + JSON 문자열 데이터 -> JS 객체 데이터
+    ```
+    JSON.parse('json_data');
 
-// 반환값
-Object {font_size: 14, highlight_line: true, ignored_packages: Array[1], line_padding_top: 2, tab_size: 2}
+    // 반환값
+    Object {font_size: 14, highlight_line: true, ignored_packages: Array[1], line_padding_top: 2, tab_size: 2}
 
-```
+    ```
 
 2. JSON.stringify('데이터')
-- JSON객체의 stringify() 메서드를 사용
-- 인자로 전달된 자바스크립트의 객체 데이터를 JSON 문자열로 변환
-- JS 객체 데이터 -> JSON 문자열 데이터
-```
-var js_data = JSON.parse('json_data');
+    + JSON객체의 stringify() 메서드를 사용
+    + 인자로 전달된 자바스크립트의 객체 데이터를 JSON 문자열로 변환
+    + JS 객체 데이터 -> JSON 문자열 데이터
+    ```
+    var js_data = JSON.parse('json_data');
 
-JSON.stringify(js_data);
+    JSON.stringify(js_data);
 
-//반환값
-"{"font_size":14,"highlight_line":true,"ignored_packages":["Vintage"],"line_padding_top":2,"tab_size":2}"
+    //반환값
+    "{"font_size":14,"highlight_line":true,"ignored_packages":["Vintage"],"line_padding_top":2,"tab_size":2}"
 
-```
+    ```
 
 
 ###서버와 클라이언트의 데이터 통신 (JSON 사용전과 후)
@@ -97,26 +97,26 @@ JSON.stringify(js_data);
 > 저런 방식으로 변환하고 통신해야한다면 힘들고 복잡해진다.
 
 2. 그래서 생긴 JSON
-- 서로 다른언어가 객체, 배열 같은 데이터 형식을 그대로 전송할 수 있다.
-- 이 역할을 하는것이 JSON이다.
-- JSON은 자바스크립트의 문법을 따르고 다른 언어에서도 사용할 수 있는 표준.
+    + 서로 다른언어가 객체, 배열 같은 데이터 형식을 그대로 전송할 수 있다.
+    + 이 역할을 하는것이 JSON이다.
+    + JSON은 자바스크립트의 문법을 따르고 다른 언어에서도 사용할 수 있는 표준.
 
-- php 에서의 JSON 화 시키는 API는 
-    + `json_encode();`
-    + `json_decode();`
-- 클라이언트 : 자바스크립트의 배열로 바꾸는것은
-    + 받은 데이터를 변수에 담아서 
-    + JSON.parse(데이터);
+    + php 에서의 JSON 화 시키는 API는 
+        * `json_encode();`
+        * `json_decode();`
+    + 클라이언트 : 자바스크립트의 배열로 바꾸는것은
+        * 받은 데이터를 변수에 담아서 
+        * JSON.parse(데이터);
 
-**=>** 내부적으론 어차피 문자이긴 하지만 split()와 같은 메서드 사용안해도 됨
+    **=>** 내부적으론 어차피 문자이긴 하지만 split()와 같은 메서드 사용안해도 됨
 
 ####JSON이 지원하는 데이터 타입
 JSON은 모든 언어의 데이터타입 지원은 않는다
-- 지원하는 데이터 타입
-    + 객체 {}, 배열 []
-    + 그 객체와 배열에 들어가는 값은
-        * 값 : String, Number, Object Array Boolean null 
-    + undefind NaN은 지원안함.
+    - 지원하는 데이터 타입
+        + 객체 {}, 배열 []
+        + 그 객체와 배열에 들어가는 값은
+            * 값 : String, Number, Object Array Boolean null 
+        + undefind NaN은 지원안함.
 
 **참고**
 - 다른언어들도 josn api가 다 있다. 검색 해봐야함
