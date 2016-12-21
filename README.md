@@ -3,31 +3,9 @@ front end developer of a study
 
 ##HTML
   1. [Basic and other](https://github.com/sseom/learning/blob/master/01_HTML/01_basic.md)
-    - html
-    - doctype
-    - html lang="ko-KR"
-    - head
-    - meta
-    - title
-    - link
-    - Favicon
-    - script
-    - style
-    - 경로
-    - IE 조건부 주석문
-    - HTML 엔티티 코드
+    - html, doctype, html lang="ko-KR", head, meta, title, link, Favicon, script, style, 경로, IE 조건부 주석문, HTML 엔티티 코드
   2. [Element](https://github.com/sseom/learning/blob/master/01_HTML/02_element.md)
-    - Div, Span 그룹핑
-    - H 제목
-    - P 단락
-    - Srong, Em 강조
-    - A 링크
-    - Img 이미지
-    - Ol , Ul , Dl 목록
-    - Table 테이블
-    - From 폼
-    - Et cetera 기타 등등
-    - Bolck, Inline Element
+    - Div, Span 그룹핑, H 제목, P 단락, Srong, Em 강조, A 링크, Img 이미지, Ol , Ul , Dl 목록, Table 테이블, From 폼, Et cetera 기타 등등, Bolck, Inline Element
   3. HTML5
     - 구조
 
@@ -68,6 +46,15 @@ front end developer of a study
 ##Ajax 와 JSON
   1. [Ajax](https://github.com/sseom/learning/blob/master/04_Ajax_JSON/01_Ajax.md)
   2. [JSON](https://github.com/sseom/learning/blob/master/04_Ajax_JSON/02_JSON.md)
+
+##AngularJS
+  1. [Intro](https://github.com/sseom/learning/blob/master/05_AngularJS/01_Angular_Intro.md)
+  2. [Expressions](https://github.com/sseom/learning/blob/master/05_AngularJS/02_Angular_Expressions.md)
+  3. [Modules](https://github.com/sseom/learning/blob/master/05_AngularJS/03_Angular_Modules.md)
+  4. [Directives](https://github.com/sseom/learning/blob/master/05_AngularJS/04_Angular_Directives.md)
+  5. [Model](https://github.com/sseom/learning/blob/master/05_AngularJS/05_Angular_Model.md)
+  6. [Controllers](https://github.com/sseom/learning/blob/master/05_AngularJS/06_Angular_Controllers.md)
+  7. [Filters](https://github.com/sseom/learning/blob/master/05_AngularJS/07_Angular_Filters.md)
 
 ##example
   1. 아이어맨 메세지 
