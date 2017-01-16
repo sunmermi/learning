@@ -1,5 +1,3 @@
----
-
 ##attribute 와 property 차이
 - attribute : 정적
   + HTML 속성들은 attribute 

@@ -116,7 +116,7 @@ JSON은 모든 언어의 데이터타입 지원은 않는다
         + 객체 {}, 배열 []
         + 그 객체와 배열에 들어가는 값은
             * 값 : String, Number, Object Array Boolean null 
-        + undefind NaN은 지원안함.
+        + undefind, NaN, 메서드(function) 지원안함.
 
 **참고**
 - 다른언어들도 josn api가 다 있다. 검색 해봐야함

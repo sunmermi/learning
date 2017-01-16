@@ -7,7 +7,9 @@
 ##Ajax란?
 - Asynchronous JavaScript and XML
     + 비동기적으로 자바스크립트를 이용해서 서버와 브라우져가 통신하는 방식(데이터를 주고받는)
+        * 자바스크립트를 이용해서 HttpRequest를 보내고 그 응답을 받아 처리할 수 있는 기술
     + 지금은 XML이 아니더라도 text, html, JSON 등으로도 처리가 가능
+    + 사용자에게 더 나은 사용경험을 제공해준다.
 
 1. Ajax 장점
     + 페이지 이동 없다.
@@ -58,27 +60,37 @@
     - send가 호출 되면 XMLHttpRequest객체가 이 주소로 이 방식으로 통신을 시작한다.
     - `xhr.send();`
 4. 서버 응답 처리
+    - [HTTP 상태 코드](https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C)
     - 통신하는 과정에서 내부적으로 단계들이 존재함 
         + 웹 서버로부터 응답이 도착하면 특정한 JavaScript 함수를 호출
         + 이벤트 핸들러가 호출이 되는데 전송받았다.. 받는중이다... 등등의 변화
         + 상태의 변화가 있을때마다 이벤트핸들러가 호출
     - onreadystatechange
-        + 서버와의 통신이 끝났을 때 호출되는 이벤트
+        + 서버와의 통신의 상태에 따라 호출되는 이벤트
+        + `xhr.onreadystatechange = function() { }`
     - readyState 프로퍼티 : 통신의 상태 체크
         + 0 : 객체만 생성되고 아직 open()메서드 수행전
         + 1 : open메서드가 호출되고 아직 send 메서드가 호출되지 않은 상태 == 로딩중
         + 2 : send 메서드가 호출되고 status와 header는 도착하지 않은 상태 == 로딩완료
-        + 3 : 데이터의 일부를 받은 상태 == 서버 처리중
+        + 3 : 데이터의 일부를 받은 상태로 body부분이 수신중일때 == 서버 처리중
         + 4 : 데이터를 전부 받은 상태. 완전한 데이터의 이용 가능 == 서버 처리 완료
-    - status : HTTP 통신의 결과를 의미
+        + `if ( this.status === 200 && this.readyState === 4 ) {  }`
+    - status : HTTP 통신의 결과를 의미 
         + 100 : continue
         + 101 : Switching Protocols
         + 200 : 통신 성공 == 요청 성공
         + 403 : 접근거부
         + 404 : Not Found 클라이언트오류 == 파일/페이지 없음
         + 5XX : Internal Server Error 서버오류
-    - responseText
+        + `if ( this.status === 200 && this.readyState === 4 ) {  }`
+    - response
         + 응답된 데이터 == 서버에서 리턴해준 정보를 담고있는 속성
+        + 접근했을때만 비동기로 데이터를 리소스를 받을수 있음 그래서 이벤트 등록해서 사용
+        + responseType
+            * 데이터 파일 타입에 따라...
+            * responseXML : xml
+            * responseText : txt, html 
+            * response : json
  
 ###Ajax 코드 실행 순서
 1. 사용자 요청(이벤트발생) -> Ajax를 통해서 -> 서버전송
@@ -88,6 +100,39 @@
 5. 웹 서버는 알맞게 처리한 뒤 응답 결과를 XMLHttpRequest에 전송
 5. XMLHttpRequest 객체에 응답이 도착하면 == 통신이 끝나면
 6. onreadystatechange 프로퍼티에 지정한 콜백 함수를 실행.
+
+```
+    // IE 6 이하 웹 브라우저를 위한 대체 코드
+    var createXHR = (function(){
+      XHR = XHR || ActiveXObject('Microft.XHMHTTP');
+      return function(){ return new XHR(); };
+    })();
+
+    // 1. 객체생성
+    // XHLHttpRequest() 생성자 함수를 통해 
+    // 비동기 통신을 수행할 객체를 생성한다.
+    var xhr = createXHR();
+
+    // 2. open()
+    // xhr.open('GET', 'data.html', false);// 동기 통신 Deprecated!!
+    // xhr.open('GET', 'data.html', true);// 비동기 통신  true 기본값
+    xhr.open('GET', 'data.html');
+
+    // 비동기 통신 객체에 이벤트 핸들러 바인딩
+    xhr.onreadystatechange = function() {
+        
+        if ( this.status === 200 && this.readyState === 4 ) {
+          var random_users = this.response;
+          result_view.innerHTML = this.responseText;
+        } else {
+          // console.log('통신 데이터 전송 실패!');
+          result_view.textContent = '데이터 로드에 실패했습니다....';
+        }
+    }
+
+    // 3. 에이젝스 통신 요청 보내기
+    xhr.send();
+```
 
 
 ###post방식
