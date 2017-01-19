@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>알고리즘 레벨1 | 헬로월드</title>
+    <style type="text/css">
+      body{ width: 80%; max-width: 900px; min-width: 400px; margin-left: auto; margin-right: auto; color: #333; margin-top: 0;}
+      h2{text-align: center; background-color: #FFCF1A; padding: 30px 0; margin-top: 0; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;}
+      a{ text-decoration: none; }
+      .go{font-size: 14px; padding-left: 10px;}
+      .go a{color: #fff;}
+      .go a:hover, .go a:focus{border-bottom: 1px solid #fff;}
+      .problem_wrap{padding: 20px; border: 2px solid #FFCF1A; border-radius: 10px; margin-bottom: 30px;}
+      .problem_txt{ font-size: 15px; }
+      .link a{ color: #FD6D2D;}
+      .link a:hover,.link a:focus{ border-bottom: 1px solid #FD6D2D;}
+      .btn{ border: none; background-color: #BF7F0E; color: #fff; padding: 5px 20px; cursor: pointer; border-radius: 3px;}
+      .val{ border: 1px solid #6C6462; border-radius: 5px; padding: 10px 20px; margin-bottom: 40px;}
+    </style>
+  </head>
+  <body>
+    <h2>헬로월드 알고리즘 Lv.1 문제 <span class="go"><a href="http://tryhelloworld.co.kr/challenges?language=javascript" target="_blank" title="새창으로 헬로월드 알고리즘 문제 페이지로 바로가기">problem link</a></span></h2>
+    <!-- 1. 문제 -->
+    <div class="problem_wrap">
+      <h3>1. 핸드폰 번호 가리기</h3>
+      <p class="problem_txt">
+        별이는 헬로월드텔레콤에서 고지서를 보내는 일을 하고 있습니다. 개인정보 보호를 위해 고객들의 전화번호는 맨 뒷자리 4자리를 제외한 나머지를 "*"으로 바꿔야 합니다.<br>
+        전화번호를 문자열 s로 입력받는 hide_numbers함수를 완성해 별이를 도와주세요.<br>
+        예를들어 s가 "01033334444"면 "*******4444"를 리턴하고, "027778888"인 경우는 "*****8888"을 리턴하면 됩니다.
+      </p>
+
+      <h4>번호입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*숫자입력)</span> </h4>
+      <input type="tel" name="user_tel" id="user_tel" >
+      <button type="button" class="btn"> 번호입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+
+      <script>
+        (function(global){
+          'use strict';
+          // 대상 선택
+          var user_tel = document.querySelector('#user_tel');
+          var btn = document.querySelector('.btn');
+          var val = document.querySelector('.val');
+
+          btn.onclick=function(){
+            val.innerHTML = hide_numbers(user_tel.value);
+          };
+
+          function hide_numbers(number){
+
+            // 대상선택
+            var hide = number.slice(0, -4); // (번호 뒷 4자리를 제외한 앞자리)
+            var show = number.slice(-4); // 번호 뒷자리 : 0000
+            var star_num = ""; // 별을 집어 넣을 빈 변수
+            
+            // 앞자리 번호 순환해서 별로 바꾸기
+            for(var i=0; i < hide.length ; i++){
+              // console.log(star[i]);
+              var star = hide[i].replace( hide[i] , '*');
+              // console.log(star);
+
+              // 별을 한개씩 추가
+              star_num += star;
+            }
+
+            // console.log(star_num);
+
+            // 별로 바뀐 앞자리와 뒷자리 번호 합해서 결과 반환
+            var result = star_num + show ;
+            return result;
+          }
+          // 아래는 테스트로 출력해 보기 위한 코드입니다.
+          // console.log("결과 : " + hide_numbers('0103333444455'));
+        })(this);
+      </script>
+
+    </div>
+    <!-- 1. 문제 끝 -->
+
+
+
+  </body>
+</html>
