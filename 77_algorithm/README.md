@@ -1,6 +1,6 @@
 
 ##알고리즘
-- [헬로월드 : 알고리즘 문제 Lv.1 ](http://tryhelloworld.co.kr/challenges?language=javascript)
+- [헬로월드 : 알고리즘 문제](http://tryhelloworld.co.kr/challenges?language=javascript)
 - 일정 : 매주 금요일 (2017.01.20 시작 ~ )
 - 스터디원 : 총 6명 ()
 - 스터디 방식 : 각자 원하는 문제 한개를 풀어서 스터디에서 스터디원들에게 브리핑
@@ -14,5 +14,6 @@
 
 ###진행
 - [ 레벨 1 ]
+    + [헬로월드 Lv.1 문제 바로가기](http://tryhelloworld.co.kr/challenges?language=javascript&level=1)
     + [알고리즘 문제 실행 페이지](https://sseom.github.io/learning/77_algorithm/level-1/)
-    + [소스보기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md)
+    + [ 문제풀이 소스보기 ](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md)
