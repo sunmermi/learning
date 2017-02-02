@@ -94,7 +94,7 @@
       </p>
 
       <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*평규값 구할 숫자데이터 구분은 +(더하기) 대신 ,(콤마)로!! ex) 1,2,3 으로 입력바랍니다. )</span> </h4>
-      <input type="tel" class="user_input_02">
+      <input type="text" class="user_input_02">
       <button type="button" class="btn btn_02"> 평균 구하기 </button>
 
       <!-- result -->
@@ -156,7 +156,7 @@
       </p>
 
       <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
-      <input type="tel" class="user_input_03">
+      <input type="text" class="user_input_03">
       <button type="button" class="btn btn_03"> 홀짝 구분 </button>
 
       <!-- result -->
@@ -192,6 +192,64 @@
       })(this);
 
     </script>
+
+
+
+
+
+    <div class="problem_wrap">
+      <h3>4. 정수 제곱근 판별하기</h3>
+      <p class="problem_txt">
+        nextSqaure함수는 정수 n을 매개변수로 입력받습니다.<br>
+        n이 임의의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고,<br>
+        n이 임의의 정수 x의 제곱이 아니라면 'no'을 리턴하는 함수를 완성하세요.<br>
+        예를들어 n이 121이라면 이는 정수 11의 제곱이므로 (11+1)의 제곱인 144를 리턴하고,<br>3이라면 'no'을 리턴하면 됩니다.
+      </p>
+
+      <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <input type="text" class="user_input_04">
+      <button type="button" class="btn btn_04"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_04">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#4-정수-제곱근-판별하기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+
+    </div>
+    
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_04');
+        var btn = document.querySelector('.btn_04');
+        var val = document.querySelector('.val_04');
+
+        btn.onclick=function(){
+          // 숫자로 변경
+          val.innerHTML = nextSqaure(user_input.value * 1);
+        };
+        function nextSqaure(n){
+            var result = 0;
+            // 전달받은 수만큼 순환
+            for(var i = 0; i < n ; i++){
+              // 한개씩 다 곱해보자
+              var num = i * i;
+              //만약 곱한 값이 전달된 값과 같다면
+              if( num === n ){ 
+                result = (i + 1) * (i + 1);
+                return result;
+              }
+            }
+            // 전달된 값과 곱한값들이 같은게 없다면 no반환
+            return result = 'no';
+        }
+
+      })(this);
+
+    </script>
+
 
 
   </body>

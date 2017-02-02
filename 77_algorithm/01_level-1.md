@@ -110,7 +110,7 @@
 
 ---
 
-###2. 평균 구하기
+###2. 평균 구하기 : 2017 / 02 / 01
 - [ 문제 ]
     ```
     average(list):
@@ -199,7 +199,7 @@
 
 ---
 
-###3. 짝수와 홀수
+###3. 짝수와 홀수 : 2017 / 02 / 01
 - [ 문제 ]
     ```
     evenOrOdd 메소드는 int형 num을 매개변수로 받습니다.
@@ -260,7 +260,96 @@
 
 ---
 
-###4. 문제
+###4. 정수 제곱근 판별하기 : 2017 / 02 / 02
+- [ 문제 ]
+    ```
+    nextSqaure함수는 정수 n을 매개변수로 입력받습니다.
+    n이 임의의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 임의의 정수 x의 제곱이 아니라면 'no'을 리턴하는 함수를 완성하세요.
+    예를들어 n이 121이라면 이는 정수 11의 제곱이므로 (11+1)의 제곱인 144를 리턴하고, 3이라면 'no'을 리턴하면 됩니다.
+    ```
+
+- [ 내 코드 ]
+    ```
+    function nextSqaure(n){
+      var result = 0;
+        for(var i = 0; i < n ; i++){
+            var val = i * i;
+            if( val === n ){ 
+              result = i + 1;
+              result = result * result;
+            }
+        }
+      if(result === 0){result = 'no';}
+      return result;
+    }
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log("결과 : " + nextSqaure(121));
+    console.log("결과 : " + nextSqaure(3));
+
+    // ----------------------------------------------------------------------
+    function nextSqaure(n){
+        var result = 0;
+        for(var i = 0; i < n ; i++){
+          var val = i * i;
+          if( val === n ){ 
+            result = (i + 1) * (i + 1);
+            return result;
+          }
+        }
+        return result = 'no';
+    }
+    ```
+
+- [ 내가 사용한 방법 ]
+    + 제곱근이란? == 루트라고도 한다.
+        * 루트란 그 수의 뿌리. 간단히 설명하면 3의 제곱은 9다.
+        * 3x3=9 , 4x4=16 .....
+    + 너무 어려웠음 수학적인 개념을 어케 풀어야할지 몰라서,, 무식하게 다 곱해봤다.
+        * 임의의 정수 0부터 인자로 전달한 숫자만큼 for문 순환
+        * 임의의 정수를 다 곱한다. 그 결과값이 전달된 값과 같다면
+        * 임의의 정수값에 +1 을  하고 곱해서 값을 반환
+        * 모든수를 곱해봤는데 전달된 값과 같은값이 없다면 no반환
+    + ==> 다른 사람들이 풀이한 코드를 보니까 알아야 할게 참 많다는걸 느낌.. 이미 만들어진 함수가 있구나..
+    
+- [ 다른 사람들이 풀이한 코드 1 ]
+    + [Math 객체](http://www.w3schools.com/js/js_math.asp)
+        * [sqrt()](http://www.w3schools.com/jsref/jsref_sqrt.asp)
+            - 전달된 인자의 제곱근을 반환.
+        * [pow(인자1, 인자2)](http://www.w3schools.com/jsref/jsref_pow.asp)
+            - 인자 1의 값을 인자2의 거듭 제곱
+            - pow(3, 2) : 3 * 3 값 반환
+        * [floor()](http://www.w3schools.com/jsref/jsref_floor.asp)
+            - 인자로 전달된 값의 소숫점 아래는 무조건 절삭시킴
+    + [Number 객체](http://www.w3schools.com/jsref/jsref_obj_number.asp)
+        * [isInteger()](http://www.w3schools.com/jsref/jsref_isinteger.asp)
+            - 값이 정수인지 확인.
+            - Browser Support 많이 낮음
+    ```
+    // 1번
+    function nextSqaure(n){
+        var x = Math.sqrt(n) ;
+        return (x - Math.floor(x)==0)? (x+1)*(x+1) : "no";
+    }
+
+    // 2번 : 지원율 낮은 isInteger()가 있으니 다른 방법이 좋을것 같다.
+    function nextSqaure(n){
+      var sqrt = Math.sqrt(n);
+      var result = Number.isInteger(sqrt) ? Math.pow(sqrt+1, 2) : "no";
+      return result;
+    }
+
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log("결과 : " + nextSqaure(121));
+    ```
+
+
+
+
+
+---
+
+###5. 문제
 - [ 문제 ]
 - [ 내 코드 ]
 - [ 내가 사용한 방법 ]
