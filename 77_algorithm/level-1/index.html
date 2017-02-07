@@ -252,5 +252,133 @@
 
 
 
+    <div class="problem_wrap">
+      <h3>5. 삼각형출력하기</h3>
+      <p class="problem_txt">
+        printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.<br>
+        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는<br>
+        printTriangle 메소드를 완성하세요<br>
+        printTriangle이 return하는 String은 개행문자('\n')로 끝나야 합니다.<br>
+        <br>
+        높이가 3일때<br>
+        <pre>
+          <code>
+            *
+            **
+            ***
+          </code>
+        </pre>
+
+        높이가 5일때<br>
+        <pre>
+          <code>
+            *
+            **
+            ***
+            ****
+            *****
+          </code>
+        </pre>
+      </p>
+
+      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <input type="text" class="user_input_05">
+      <button type="button" class="btn btn_05"> 홀짝 구분 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_05">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#5-삼각형출력하기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+
+    </div>
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_05');
+        var btn = document.querySelector('.btn_05');
+        var val = document.querySelector('.val_05');
+
+        btn.onclick=function(){
+          val.innerHTML = "<pre>"+ printTriangle(user_input.value)+"</pre>";
+        };
+
+        function printTriangle(num) {
+          var result = '';
+          for(var i =0 ; i < num ; i++){
+            for(var l=0 ; l < i; l++){
+              result += '*';
+            }
+            result += '*\n';
+          }
+          return result;
+        }
+
+      })(this);
+    </script>
+
+
+
+
+
+
+    <div class="problem_wrap">
+      <h3>6. 역삼각형 출력하기</h3>
+      <p class="problem_txt">
+        printReversedTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.<br>
+        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 <br>
+        printReversedTriangle 메소드를 완성하세요.<br>
+        <br>
+        높이(num)가 3일때 다음과 같은 문자열을 리턴하면 됩니다.<br>
+        <pre>
+          <code>
+            ***
+            **
+            *
+          </code>
+        </pre>
+      </p>
+
+      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <input type="text" class="user_input_06">
+      <button type="button" class="btn btn_06"> 홀짝 구분 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_06">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#5-역삼각형-출력하기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+
+    </div>
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_06');
+        var btn = document.querySelector('.btn_06');
+        var val = document.querySelector('.val_06');
+
+        btn.onclick=function(){
+          val.innerHTML = "<pre>" + printReversedTriangle(user_input.value) + "</pre>";
+        };
+
+        function printReversedTriangle(num) {
+            var result = '';
+            for(var i = 0; i<num; i++){
+                for(var l = num-1; l>i; l--){
+                    result += '*';
+                }
+            result += '*\n';
+          }
+          return result
+        }
+
+      })(this);
+    </script>
+
+
+
+
   </body>
 </html>

@@ -349,7 +349,165 @@
 
 ---
 
-###5. 문제
+###5. 삼각형출력하기 : 2017 / 02 / 06
+- [ 문제 ]
+    ```
+    printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
+    다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는
+    printTriangle 메소드를 완성하세요
+    printTriangle이 return하는 String은 개행문자('\n')로 끝나야 합니다.
+
+    높이가 3일때
+    *
+    **
+    ***
+
+    높이가 5일때
+    *
+    **
+    ***
+    ****
+    *****
+    ```
+
+- [ 내 코드 ]
+    ```
+    function printTriangle(num) {
+      var result = '';
+      for(var i =0 ; i < num ; i++){
+        for(var l=0 ; l < i; l++){
+          result += '*';
+        }
+        result += '*\n';
+      }
+      return result;
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log( printTriangle(3) );
+    ```
+
+- [ 내가 사용한 방법 ]
+    + 반복문 사용
+        * 전달된 숫자만큼 별표 반복 출력해야하니까 for문 사용
+    + 별 출력
+        * 더하기(+) 연산 사용해서 문자열 '*' 대입
+    + 개행
+        * 정규식표현 : \n
+        * 별이 1행으로 `***` 출력 되는걸 한개의 별들이 각 1,2,3행으로 출력되게 끔 개행.
+    + 2중 for문
+        * 1번째 반복문에서 출력된 별에서 추가적으로 반복 출력
+        * 리미트 값은 i 값
+
+- [ 다른 사람들이 풀이한 코드 1 ]
+    + 나와 같은 2중 for문을 사용
+    + 다른점은 
+        * outer for문에서의 결과값은 개행만
+        * inner for문에서 비교연산을 `j<=i` 크거나 같다 사용해서 순차적으로 찍히게 만듬.
+```
+function printTriangle(num) {
+  var result = ''
+  // 
+  for(var i=0; i<num; i++){
+    for(var j=0; j<=i; j++){
+        result += '*';
+    }
+    result += '\n';
+  }
+  return result
+}
+```
+
+- [ 다른 사람들이 풀이한 코드 2 ]
+    + repeat() 사용
+        * `string.repeat(count)`
+        * 호출 된 문자열의 지정된 수만큼 복사해서 문자열 반환
+        * 단점 : 브라우져 지원율이 낮음
+```
+function printTriangle(num) {
+    var result = ''
+    for(var i=0; i<num; i++) {
+        result += '*'.repeat(i+1) + "\n";
+    }
+    return result
+}
+```
+
+---
+
+###6. 역삼각형 출력하기 : 2017 / 02 / 07
+- [ 문제 ]
+    ```
+    printReversedTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
+    다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는
+    printReversedTriangle 메소드를 완성하세요.
+    
+    높이(num)가 3일때 다음과 같은 문자열을 리턴하면 됩니다.
+    ***
+    **
+    *
+    ```
+
+- [ 내 코드 ]
+```
+function printReversedTriangle(num) {
+    var result = '';
+    for(var i = 0; i<num; i++){
+        for(var l = num-1; l>i; l--){
+            result += '*';
+        }
+    result += '*\n';
+  }
+  return result
+}
+
+// 아래는 테스트로 출력해 보기 위한 코드입니다.
+console.log("결과 : " +'\n'+ printReversedTriangle(3));
+```
+
+- [ 내가 사용한 방법 ]
+    + 위 [5. 삼각형출력하기] 문제와 동일
+    + 단, 역삼각형 출력이기 때문에 2중 for문이 달라짐
+        * l값은 전달받은 num에서 -1을 한값
+        * l과 i의 비교연산 : l이 i보다 작을때까지 순환
+        * 매 순환마다 l의 값은 마이너스
+
+- [ 다른 사람들이 풀이한 코드 1 ]
+    + 위 [5. 삼각형출력하기] 문제와 동일
+    + 2중 for문 사용하지 않고 repeat() 매서드 사용
+```
+function printReversedTriangle(num) {
+  var result = "";
+  for(var i = num ; i > 0; i--) {
+    result+= "*".repeat(i) + "\n";
+  }
+  return result
+}
+
+```
+
+- [ 다른 사람들이 풀이한 코드 2 ]
+    + repeat() 사용
+    + 재귀함수 사용
+        * 재귀함수는 함수 자신을 호출하는 프로그래밍 기법.
+        * [MSDN 재귀 함수](https://goo.gl/1rZp5q)
+            - factorial(1); // value 1
+            - factorial(2); // value 2
+            - factorial(3); // value 6
+            - factorial(4); // value 24
+        * [생활코딩 재귀함수](https://opentutorials.org/module/904/6700)
+```
+function printReversedTriangle(num) {
+    var result = "";
+    // 재귀함수
+    return num? "*".repeat(num)+"\n"+ printReversedTriangle(num-1):"";
+}
+```
+
+
+---
+
+###7. 문제
 - [ 문제 ]
 - [ 내 코드 ]
 - [ 내가 사용한 방법 ]
