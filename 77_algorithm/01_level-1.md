@@ -110,10 +110,11 @@
 
 ---
 
-###2. 평균 구하기 : 2017 / 02 / 01
+###2. 평균 구하기
+- 2017 / 02 / 01
 - [ 문제 ]
     ```
-    average(list):
+    average(list);
     함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.
     어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.
     ```
@@ -199,7 +200,8 @@
 
 ---
 
-###3. 짝수와 홀수 : 2017 / 02 / 01
+###3. 짝수와 홀수
+- 2017 / 02 / 01
 - [ 문제 ]
     ```
     evenOrOdd 메소드는 int형 num을 매개변수로 받습니다.
@@ -260,7 +262,8 @@
 
 ---
 
-###4. 정수 제곱근 판별하기 : 2017 / 02 / 02
+###4. 정수 제곱근 판별하기
+- 2017 / 02 / 02
 - [ 문제 ]
     ```
     nextSqaure함수는 정수 n을 매개변수로 입력받습니다.
@@ -344,12 +347,10 @@
     ```
 
 
-
-
-
 ---
 
-###5. 삼각형출력하기 : 2017 / 02 / 06
+###5. 삼각형출력하기
+- 2017 / 02 / 06
 - [ 문제 ]
     ```
     printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
@@ -404,38 +405,39 @@
     + 다른점은 
         * outer for문에서의 결과값은 개행만
         * inner for문에서 비교연산을 `j<=i` 크거나 같다 사용해서 순차적으로 찍히게 만듬.
-```
-function printTriangle(num) {
-  var result = ''
-  // 
-  for(var i=0; i<num; i++){
-    for(var j=0; j<=i; j++){
-        result += '*';
+    ```
+    function printTriangle(num) {
+      var result = ''
+      // 
+      for(var i=0; i<num; i++){
+        for(var j=0; j<=i; j++){
+            result += '*';
+        }
+        result += '\n';
+      }
+      return result
     }
-    result += '\n';
-  }
-  return result
-}
-```
+    ```
 
 - [ 다른 사람들이 풀이한 코드 2 ]
     + repeat() 사용
         * `string.repeat(count)`
         * 호출 된 문자열의 지정된 수만큼 복사해서 문자열 반환
         * 단점 : 브라우져 지원율이 낮음
-```
-function printTriangle(num) {
-    var result = ''
-    for(var i=0; i<num; i++) {
-        result += '*'.repeat(i+1) + "\n";
+    ```
+    function printTriangle(num) {
+        var result = ''
+        for(var i=0; i<num; i++) {
+            result += '*'.repeat(i+1) + "\n";
+        }
+        return result
     }
-    return result
-}
-```
+    ```
 
 ---
 
-###6. 역삼각형 출력하기 : 2017 / 02 / 07
+###6. 역삼각형 출력하기
+- 2017 / 02 / 07
 - [ 문제 ]
     ```
     printReversedTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
@@ -449,21 +451,21 @@ function printTriangle(num) {
     ```
 
 - [ 내 코드 ]
-```
-function printReversedTriangle(num) {
-    var result = '';
-    for(var i = 0; i<num; i++){
-        for(var l = num-1; l>i; l--){
-            result += '*';
-        }
-    result += '*\n';
-  }
-  return result
-}
+    ```
+    function printReversedTriangle(num) {
+        var result = '';
+        for(var i = 0; i<num; i++){
+            for(var l = num-1; l>i; l--){
+                result += '*';
+            }
+        result += '*\n';
+      }
+      return result
+    }
 
-// 아래는 테스트로 출력해 보기 위한 코드입니다.
-console.log("결과 : " +'\n'+ printReversedTriangle(3));
-```
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log("결과 : " +'\n'+ printReversedTriangle(3));
+    ```
 
 - [ 내가 사용한 방법 ]
     + 위 [5. 삼각형출력하기] 문제와 동일
@@ -475,16 +477,16 @@ console.log("결과 : " +'\n'+ printReversedTriangle(3));
 - [ 다른 사람들이 풀이한 코드 1 ]
     + 위 [5. 삼각형출력하기] 문제와 동일
     + 2중 for문 사용하지 않고 repeat() 매서드 사용
-```
-function printReversedTriangle(num) {
-  var result = "";
-  for(var i = num ; i > 0; i--) {
-    result+= "*".repeat(i) + "\n";
-  }
-  return result
-}
+    ```
+    function printReversedTriangle(num) {
+      var result = "";
+      for(var i = num ; i > 0; i--) {
+        result+= "*".repeat(i) + "\n";
+      }
+      return result
+    }
 
-```
+    ```
 
 - [ 다른 사람들이 풀이한 코드 2 ]
     + repeat() 사용
@@ -496,13 +498,13 @@ function printReversedTriangle(num) {
             - factorial(3); // value 6
             - factorial(4); // value 24
         * [생활코딩 재귀함수](https://opentutorials.org/module/904/6700)
-```
-function printReversedTriangle(num) {
-    var result = "";
-    // 재귀함수
-    return num? "*".repeat(num)+"\n"+ printReversedTriangle(num-1):"";
-}
-```
+    ```
+    function printReversedTriangle(num) {
+        var result = "";
+        // 재귀함수
+        return num? "*".repeat(num)+"\n"+ printReversedTriangle(num-1):"";
+    }
+    ```
 
 
 ---
