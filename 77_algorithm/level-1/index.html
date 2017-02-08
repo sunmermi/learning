@@ -171,7 +171,7 @@
         num은 0이상의 정수이며, num이 음수인 경우는 없습니다.
       </p>
 
-      <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
       <input type="text" class="user_input_03">
       <button type="button" class="btn btn_03"> 홀짝 구분 </button>
 
@@ -211,8 +211,6 @@
 
 
 
-
-
     <div class="problem_wrap">
       <h3>4. 정수 제곱근 판별하기</h3>
       <p class="problem_txt">
@@ -222,7 +220,7 @@
         예를들어 n이 121이라면 이는 정수 11의 제곱이므로 (11+1)의 제곱인 144를 리턴하고,<br>3이라면 'no'을 리턴하면 됩니다.
       </p>
 
-      <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <h4>숫자입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
       <input type="text" class="user_input_04">
       <button type="button" class="btn btn_04"> 입력 </button>
 
@@ -272,8 +270,7 @@
       <h3>5. 삼각형출력하기</h3>
       <p class="problem_txt">
         printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.<br>
-        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는<br>
-        printTriangle 메소드를 완성하세요<br>
+        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 printTriangle 메소드를 완성하세요<br>
         printTriangle이 return하는 String은 개행문자('\n')로 끝나야 합니다.<br>
         <br>
         높이가 3일때<br>
@@ -297,7 +294,7 @@
         </pre>
       </p>
 
-      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
       <input type="text" class="user_input_05">
       <button type="button" class="btn btn_05"> 입력 </button>
 
@@ -339,8 +336,7 @@
       <h3>6. 역삼각형 출력하기</h3>
       <p class="problem_txt">
         printReversedTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.<br>
-        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 <br>
-        printReversedTriangle 메소드를 완성하세요.<br>
+        다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 printReversedTriangle 메소드를 완성하세요.<br>
         <br>
         높이(num)가 3일때 다음과 같은 문자열을 리턴하면 됩니다.<br>
         <pre>
@@ -352,7 +348,7 @@
         </pre>
       </p>
 
-      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <h4>높이 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
       <input type="text" class="user_input_06">
       <button type="button" class="btn btn_06"> 입력 </button>
 
@@ -360,7 +356,7 @@
       <h4> 결과 </h4>
       <p class="val val_06">result view...</p>
 
-      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#5-역삼각형-출력하기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#6-역삼각형-출력하기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
 
     </div>
     <script>
@@ -390,6 +386,49 @@
     </script>
 
 
+    <div class="problem_wrap">
+      <h3>7. 스트링을 숫자로 바꾸기</h3>
+      <p class="problem_txt">
+        strToInt 메소드는 String형 str을 매개변수로 받습니다.<br>
+        str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.<br>
+        예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.<br>
+        str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
+      </p>
+
+      <h4>문자형 숫자 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*정수 입력)</span> </h4>
+      <input type="text" class="user_input_07">
+      <button type="button" class="btn btn_07"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_07">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#7-스트링을-숫자로-바꾸기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+
+    </div>
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_07');
+        var btn = document.querySelector('.btn_07');
+        var val = document.querySelector('.val_07');
+
+        btn.onclick=function(){
+          var result = strToInt(user_input.value);
+          if( isNaN(result) ){
+            val.innerHTML = "문자형 숫자로 다시 입력바랍니다.";
+          }else{
+            val.innerHTML = result;
+          }
+        };
+
+        function strToInt(str){
+          return str * 1 ;
+        }
+
+      })(this);
+    </script>
 
 
   </body>

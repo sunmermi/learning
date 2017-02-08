@@ -1,5 +1,13 @@
 ## 레벨 1 문제풀이
 - [문제실행 페이지](https://sseom.github.io/learning/77_algorithm/level-1/)
+- 문제 풀이 목록
+    1. [핸드폰번호 가리기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#1-핸드폰번호-가리기)
+    2. [평균 구하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#2-평균-구하기)
+    3. [짝수와 홀수](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#3-짝수와-홀수)
+    4. [정수 제곱근 판별하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#4-정수-제곱근-판별하기)
+    5. [별(*) 기호로 삼각형 출력하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#5-삼각형출력하기)
+    6. [별(*) 기호로 역삼각형 출력하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#6-역삼각형-출력하기)
+    7. [스트링을 숫자로 바꾸기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#7-스트링을-숫자로-바꾸기)
 
 ###1. 핸드폰번호 가리기 
 - [ 문제 ]
@@ -509,7 +517,39 @@
 
 ---
 
-###7. 문제
+###7. 스트링을 숫자로 바꾸기
+- 2017 / 02 / 08
+- [ 문제 ]
+    ```
+    strToInt 메소드는 String형 str을 매개변수로 받습니다.
+    str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.
+    예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.
+    str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
+    ```
+
+- [ 내 코드 ]
+    ```
+    function strToInt(str){
+      return str * 1 ;
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log(strToInt("-1234"));
+    ```
+
+- [ 내가 사용한 방법 ]
+    + 곱하기(*) 연산자 사용
+    + [데이터 변환 정리 문서](https://github.com/sseom/learning/blob/master/03_Javascript/03_data_type_01.md#데이터-변환-type-casting--형변환)
+
+- [ 다른 사람들이 풀이한 코드 ]
+    + Number(str) : Number 함수 사용
+    + parseInt(str) : parseInt는 전달된 문자열을 정수로 변환.
+
+
+---
+
+###8. 문제
+- 2017 / 02 / 09
 - [ 문제 ]
 - [ 내 코드 ]
 - [ 내가 사용한 방법 ]
