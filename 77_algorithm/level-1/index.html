@@ -431,5 +431,49 @@
     </script>
 
 
+
+
+    <div class="problem_wrap">
+      <h3>8. 수박수박수박수? : 전달값에 따라 패턴문자열 출력</h3>
+      <p class="problem_txt">
+        water_melon함수는 정수 n을 매개변수로 입력받습니다.<br>
+        길이가 n이고, 수박수박수...와 같은 패턴을 유지하는 문자열을 리턴하도록 함수를 완성하세요.<br>
+        예를들어 n이 4이면 '수박수박'을 리턴하고 3이라면 '수박수'를 리턴하면 됩니다.
+      </p>
+
+      <h4>숫자 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
+      <input type="text" class="user_input_08">
+      <button type="button" class="btn btn_08"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_08">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#8-수박수박수박수박수박수?" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_08');
+        var btn = document.querySelector('.btn_08');
+        var val = document.querySelector('.val_08');
+
+        btn.onclick=function(){
+          val.innerHTML = waterMelon(user_input.value);
+        };
+
+        function waterMelon(n){
+          var result = "수박";
+          return result.repeat(n).substr(0,n);
+        }
+
+
+      })(this);
+    </script>
+
+
+
   </body>
 </html>

@@ -548,7 +548,73 @@
 
 ---
 
-###8. 문제
+###8. 수박수박수박수박수박수?
+- 2017 / 02 / 10
+- [ 문제 ]
+    ```
+    water_melon함수는 정수 n을 매개변수로 입력받습니다.
+    길이가 n이고, 수박수박수...와 같은 패턴을 유지하는 문자열을 리턴하도록 함수를 완성하세요.
+    예를들어 n이 4이면 '수박수박'을 리턴하고 3이라면 '수박수'를 리턴하면 됩니다.
+    ```
+- [ 내 코드 ]
+    ```
+    function waterMelon(n){
+      var result = "", val, num;
+      for(var i=0 ; i<n ;i++){
+        num = i % 2 ;
+        !num ?  val = '수' : val = '박';
+        result += val;
+      }
+      return result;
+    }
+
+    //------------------------------------------ [refactoring 1]
+
+    function waterMelon(n){
+      var result = "";
+      for(var i=0 ; i<n ;i++){
+        result += !(i % 2) ? '수' : '박';
+      }
+      return result;
+    }
+
+    //------------------------------------------ [refactoring 2]
+
+    function waterMelon(n){
+        var result = "수박";
+        return result.repeat(n).substr(0,n);
+    }
+
+    // 실행을 위한 테스트코드입니다.
+    console.log("n이 3인 경우: "+ waterMelon(3))
+    console.log("n이 4인 경우: "+ waterMelon(4))
+    ```
+- [ 내가 사용한 방법 ]
+    + for문
+        * 보낸 인자의 수만큼 문자열을 반복
+    + 나머지 연산자
+        * '수', '박' 이라는 2가지의 패턴이 반복되는 문자열 출력.
+    + 3항조건문
+        * 수는 0 일때, 박은 1일때
+    + [ 레펙토링 2 ]
+        * substr(시작위치값, 지정한 문자 갯수)
+        * 만약에 3가지 이상의 패턴 문자가 늘어난다고 생각하면 이 코드가 더 좋음.
+- [ 다른 사람들이 풀이한 코드 ]
+    + repeat() : 문자열 메소드로 매개변수 값 만큼 반복한다.
+    + substring(a,b) : a 부터 b 사이의 문자열을 반환.
+    ```
+    function waterMelon(n){
+      var result = "수박";
+       result = result.repeat(n-1).substring(0,n);
+      //함수를 완성하세요
+
+      return result;
+    }
+    ```
+
+---
+
+###9. 문제
 - 2017 / 02 / 09
 - [ 문제 ]
 - [ 내 코드 ]
