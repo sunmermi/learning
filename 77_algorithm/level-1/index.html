@@ -469,11 +469,199 @@
           return result.repeat(n).substr(0,n);
         }
 
+      })(this);
+    </script>
+
+
+    <div class="problem_wrap">
+      <h3>9. 서울에서 김서방 찾기</h3>
+      <p class="problem_txt">
+        findKim 함수(메소드)는 String형 배열 seoul을 매개변수로 받습니다.
+        seoul의 element중 "Kim"의 위치 x를 찾아, "김서방은 x에 있다"는 String을 반환하세요.
+        seoul에 "Kim"은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+      </p>
+
+      <h4>Kim 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*영어로 입력. 예시> Queen, Tod, Kim)</span> </h4>
+      <input type="text" class="user_input_09">
+      <button type="button" class="btn btn_09"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_09">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#9-서울에서-김서방-찾기" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_09');
+        var btn = document.querySelector('.btn_09');
+        var val = document.querySelector('.val_09');
+
+        btn.onclick=function(){
+          // 공백제거 
+          // ,로 구분해서 데이터 잘라
+          var arr = (user_input.value).replace(/\s/g, "").split(',');
+          val.innerHTML = findKim(arr);
+        };
+
+        function findKim(seoul){
+          for(var i = 0; i< seoul.length; i++){
+            if(seoul[i] === "Kim"){
+                 return "김서방은 " + i + "에 있다";
+            }
+          }
+        }
 
       })(this);
     </script>
 
 
+    <div class="problem_wrap">
+      <h3>10. 문자열 다루기 기본</h3>
+      <p class="problem_txt">
+        alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.<br>
+        s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.<br>
+        예를들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다
+      </p>
+
+      <h4>문자열 입력<span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*공백 없이 입력)</span> </h4>
+      <input type="text" class="user_input_10">
+      <button type="button" class="btn btn_10"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_10">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#10-문자열-다루기-기본" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_10');
+        var btn = document.querySelector('.btn_10');
+        var val = document.querySelector('.val_10');
+
+        btn.onclick=function(){
+          val.innerHTML = alpha_string46(user_input.value);
+        };
+
+        function alpha_string46(s){
+          var len = s.length;
+          return len >= 4 && len <= 6 ? !isNaN(s) : false ;
+        }
+
+
+      })(this);
+    </script>
+
+
+
+    <div class="problem_wrap">
+      <h3>11. 약수의 합</h3>
+      <p class="problem_txt">
+        어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요.<br> 
+        예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.
+      </p>
+
+      <h4>숫자 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력)</span> </h4>
+      <input type="text" class="user_input_11">
+      <button type="button" class="btn btn_11"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_11">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#11-약수의-합" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_11');
+        var btn = document.querySelector('.btn_11');
+        var val = document.querySelector('.val_11');
+
+        btn.onclick=function(){
+          val.innerHTML = sumDivisor(user_input.value);
+        };
+
+    function sumDivisor(num) {
+        var answer = 0;
+        for(var i=0; i <= num; i++){
+            var val = num % i;
+            if(val === 0){ answer += i; }
+        }
+        return answer;
+    }
+
+      })(this);
+    </script>
+
+
+
+
+    <div class="problem_wrap">
+      <h3>12. 최대공약수와 최소공배수</h3>
+      <p class="problem_txt">
+        두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환해주는 gcdlcm 함수를 완성해 보세요.<br>
+        배열의 맨 앞에 최대공약수, 그 다음 최소공배수를 넣어 반환하면 됩니다.<br>예를 들어 gcdlcm(3,12) 가 입력되면, [3, 12]를 반환해주면 됩니다.
+      </p>
+
+      <h4>숫자 입력 <span style="color: #FC0069; font-weight: lighter; font-size: 12px;">(*양수 입력, 예시> 3, 12)</span> </h4>
+      <input type="text" class="user_input_12">
+      <button type="button" class="btn btn_12"> 입력 </button>
+
+      <!-- result -->
+      <h4> 결과 </h4>
+      <p class="val val_12">result view...</p>
+
+      <p class="link"><a href="https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#12-최대공약수와-최소공배수" target="_blank" title="새창으로 문제풀이된 소서보러 가기">문제 풀이 확인</a></p>
+    </div>
+
+    <script>
+      (function(global){
+        'use strict';
+        // 대상 선택
+        var user_input = document.querySelector('.user_input_12');
+        var btn = document.querySelector('.btn_12');
+        var val = document.querySelector('.val_12');
+
+        btn.onclick=function(){
+          var num = (user_input.value).split(',');
+          val.innerHTML = gcdlcm(num[0],num[1]);
+        };
+
+        function gcdlcm(a, b) {
+            var answer = [];
+            var divisor = divisorNum(a,b);
+            answer.push(divisor);
+            // 최소공배수 공식: 두수를 공약수로 나눈값 과 공약수의 곱
+            answer.push((a/divisor) * (b/divisor) * divisor);
+            return answer;
+        }
+
+        // 최대공약수
+        function divisorNum(a,b){
+          // 전달된 인자에서 큰값을 리미트값 설정
+          var limit_number = Math.max(a,b);
+          var divisor = 0;
+          // 반복문
+          for(var i=0; i < limit_number; i++){
+            // 전달된 a,b의 나머지가 둘다 0일때의 i값을 변수에 할당 
+            if( a%i === 0 && b%i === 0 ){ divisor = i; }
+          }
+          // 할당된값중 가장 큰수를 리턴
+          return Math.max(divisor);
+        }
+
+      })(this);
+    </script>
 
   </body>
 </html>

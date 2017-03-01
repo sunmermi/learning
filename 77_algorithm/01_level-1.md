@@ -8,6 +8,11 @@
     5. [별(*) 기호로 삼각형 출력하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#5-삼각형출력하기)
     6. [별(*) 기호로 역삼각형 출력하기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#6-역삼각형-출력하기)
     7. [스트링을 숫자로 바꾸기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#7-스트링을-숫자로-바꾸기)
+    8. [수박수박수박수박수박수?](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#8-수박수박수박수박수박수?)
+    9. [서울에서 김서방 찾기](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#9-서울에서-김서방-찾기)
+    10. [문자열 다루기 기본](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#10-문자열-다루기-기본)
+    11. [약수의 합](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#11-약수의-합)
+    12. [최대공약수와 최소공배수](https://github.com/sseom/learning/blob/master/77_algorithm/01_level-1.md#12-최대공약수와-최소공배수)
 
 ###1. 핸드폰번호 가리기 
 - [ 문제 ]
@@ -126,6 +131,7 @@
     함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.
     어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.
     ```
+
 - [ 내 코드 ]
     ```
     function average(array){
@@ -213,8 +219,7 @@
 - [ 문제 ]
     ```
     evenOrOdd 메소드는 int형 num을 매개변수로 받습니다.
-    num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하도록 evenOrOdd에 코드를 작성해 보세요.
-    num은 0이상의 정수이며, num이 음수인 경우는 없습니다.
+    num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하도록 evenOrOdd에 코드를 작성해 보세요. num은 0이상의 정수이며, num이 음수인 경우는 없습니다.
     ```
 
 - [ 내 코드 ]
@@ -329,6 +334,7 @@
         * [pow(인자1, 인자2)](http://www.w3schools.com/jsref/jsref_pow.asp)
             - 인자 1의 값을 인자2의 거듭 제곱
             - pow(3, 2) : 3 * 3 값 반환
+            - pow(3, 4) : 3 * 3 * 3 * 3 값 반환
         * [floor()](http://www.w3schools.com/jsref/jsref_floor.asp)
             - 인자로 전달된 값의 소숫점 아래는 무조건 절삭시킴
     + [Number 객체](http://www.w3schools.com/jsref/jsref_obj_number.asp)
@@ -556,6 +562,7 @@
     길이가 n이고, 수박수박수...와 같은 패턴을 유지하는 문자열을 리턴하도록 함수를 완성하세요.
     예를들어 n이 4이면 '수박수박'을 리턴하고 3이라면 '수박수'를 리턴하면 됩니다.
     ```
+
 - [ 내 코드 ]
     ```
     function waterMelon(n){
@@ -589,6 +596,7 @@
     console.log("n이 3인 경우: "+ waterMelon(3))
     console.log("n이 4인 경우: "+ waterMelon(4))
     ```
+
 - [ 내가 사용한 방법 ]
     + for문
         * 보낸 인자의 수만큼 문자열을 반복
@@ -599,6 +607,7 @@
     + [ 레펙토링 2 ]
         * substr(시작위치값, 지정한 문자 갯수)
         * 만약에 3가지 이상의 패턴 문자가 늘어난다고 생각하면 이 코드가 더 좋음.
+
 - [ 다른 사람들이 풀이한 코드 ]
     + repeat() : 문자열 메소드로 매개변수 값 만큼 반복한다.
     + substring(a,b) : a 부터 b 사이의 문자열을 반환.
@@ -614,8 +623,178 @@
 
 ---
 
-###9. 문제
-- 2017 / 02 / 09
+###9. 서울에서 김서방 찾기
+- [ 문제 ]
+    ```
+    findKim 함수(메소드)는 String형 배열 seoul을 매개변수로 받습니다.
+    seoul의 element중 "Kim"의 위치 x를 찾아, "김서방은 x에 있다"는 String을 반환하세요.
+    seoul에 "Kim"은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+    ```
+
+- [ 내 코드 ]
+    ```
+    function findKim(seoul){
+      for(var i = 0; i< seoul.length; i++){
+        if(seoul[i] === "Kim"){
+             return "김서방은 " + i + "에 있다";
+        }
+      }
+    }
+
+    // 실행을 위한 테스트코드입니다.
+    console.log( findKim(["Queen", "Tod", "Kim"]));
+
+    ```
+
+- [ 내가 사용한 방법 ]
+    + 반복문 : 전달된 배열 데이터를 순환
+    + 조건문 : 배열 데이터에 kim이 있는지 확인
+
+- [ 다른 사람들이 풀이한 코드 ]
+    + [Array.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+    ```
+    function findKim(seoul){
+      var idx = seoul.indexOf('Kim');
+      //함수를 완성하세요
+      return "김서방은 " + idx + "에 있다";
+    }
+    ```
+
+
+---
+
+###10. 문자열 다루기 기본
+- [ 문제 ]
+    ```
+    alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.
+    s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.
+    예를들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다
+    ```
+
+- [ 내 코드 ]
+    ```
+    function alpha_string46(s){
+      var len = s.length;
+      return len >= 4 && len <= 6 ? !isNaN(s) : false ;
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log( alpha_string46("a234") );
+
+    ```
+- [ 내가 사용한 방법 ]
+    + 3항조건문
+    + 논리연산 && : 모든 데이터가 참이어야 참!
+    + isNaN() 사용 : 숫자아니지? true면 숫자아님, false면 숫자
+
+- [ 다른 사람들이 풀이한 코드 ]
+    + 대부분 비슷한 방법을 썼음 : if~else 조건문, 비교연산
+
+---
+
+###11. 약수의 합
+- [ 문제 ]
+    ```
+    어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요. 예를 들어 
+    12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을
+    반환해 주면 됩니다.
+    ```
+
+- [ 내 코드 ]
+    ```
+    function sumDivisor(num) {
+        var answer = 0;
+        for(var i=0; i <= num; i++){
+            var val = num % i;
+            if(val === 0){ answer += i; }
+        }
+        return answer;
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log(sumDivisor(12));
+    ```
+- [ 내가 사용한 방법 ]
+    + 약수 : 어떠한 수를 나누어 떨어지게 하는 수
+        * 직접 계산할때는 작은수 부터 나눠보던가 소인수분해를 이용한다.
+    + 인자로 전달된 값을 제한값으로 두고 0 부터 나눠보자 ~!!
+- [ 다른 사람들이 풀이한 코드 ]
+    + 비슷함
+
+---
+
+###12. 최대공약수와 최소공배수
+- [ 문제 ]
+    ```
+    두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환해주는 gcdlcm 함수를 완성해 보세요.
+    배열의 맨 앞에 최대공약수, 그 다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어
+    gcdlcm(3,12) 가 입력되면, [3, 12]를 반환해주면 됩니다.
+    ```
+
+- [ 내 코드 ]
+    ```
+    function gcdlcm(a, b) {
+        var answer = [];
+        var divisor = divisorNum(a,b);
+        answer.push(divisor);
+        // 최소공배수 공식: 두수를 공약수로 나눈값 과 공약수의 곱
+        answer.push((a/divisor) * (b/divisor) * divisor);
+        return answer;
+    }
+
+    // 최대공약수
+    function divisorNum(a,b){
+      // 전달된 인자에서 큰값을 리미트값 설정
+      var limit_number = Math.max(a,b);
+      var divisor = 0;
+      // 반복문
+      for(var i=0; i < limit_number; i++){
+        // 전달된 a,b의 나머지가 둘다 0일때의 i값을 변수에 할당 
+        if( a%i === 0 && b%i === 0 ){ divisor = i; }
+      }
+      // 할당된값중 가장 큰수를 리턴
+      return Math.max(divisor);
+    }
+
+    // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    console.log(gcdlcm(3,12));
+    ```
+- [ 내가 사용한 방법 ]
+    + 최대공약수
+        * 전달된 숫자의 약수에서 공통되는 값중 가장큰 수
+            * 3  : 1, 3
+            * 12 : 1, 2, 3, 4, 6, 12
+            * 공약수 : 1, 3
+            * 최대 공약수 : 3
+        * 약수 : 나눠지는 값 == 전달된 수의 나머지 값이 0인것 => 나머지 연산자 사용
+    + 최소공배수
+        * 전달된 숫자의 배수에서 공통되는 값중 가장 작은수 == 배수에서 처음 공통되는 값
+            - 3  : 3, 6, 9, 12,,,24,,,,
+            - 12 : 12, 24, 36,,,,,
+            - 공배수 : 12, 24, 36,,
+            - 최소공배수 : 12
+        * 최대 공약수를 구하고 나서 그 값으로 나누기연산 
+            - (전달값 / 최대공약수) * (전달값 / 최대공약수) * 최대공약수
+    + [최대공약수, 최소공배수 개념 설명 블로그](http://ehclub.tistory.com/1565)
+- [ 다른 사람들이 풀이한 코드 ]
+    ```
+    function greatestCommonDivisor(a, b) {
+        return b ? greatestCommonDivisor(b, a % b) : Math.abs(a);
+    }
+    
+    function leastCommonMultipleOfTwo(a, b) {
+        return (a * b) / greatestCommonDivisor(a, b);
+    }
+    
+    function gcdlcm(a, b) {
+        return [greatestCommonDivisor(a, b),leastCommonMultipleOfTwo(a, b)];
+    }
+    ```
+
+---
+
+###13. 문제
+- 2017 / 03 / 00
 - [ 문제 ]
 - [ 내 코드 ]
 - [ 내가 사용한 방법 ]

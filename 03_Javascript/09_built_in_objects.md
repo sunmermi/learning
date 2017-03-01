@@ -8,7 +8,21 @@
 - window {} 객체의 메소드
 - [JavaScript Built-in Functions](https://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm)
 
-###Math : 수학관련 기능을 가진 기본 객체
+---
+
+###[String 객체](http://www.w3schools.com/jsref/jsref_obj_string.asp)
+  - [repeat()](http://www.w3schools.com/jsref/jsref_repeat.asp)
+    + `string.repeat(count)`
+    + 호출 된 문자열의 지정된 수만큼 복사해서 문자열 반환
+    + 단점 : 브라우져 지원율이 낮음
+
+###[Number 객체](http://www.w3schools.com/jsref/jsref_obj_number.asp)
+  - [isInteger()](http://www.w3schools.com/jsref/jsref_isinteger.asp)
+    - 값이 정수인지 확인.
+    - Browser Support 많이 낮음
+
+
+###[Math 객체](http://www.w3schools.com/js/js_math.asp) : 수학관련 기능을 가진 기본 객체
   - Math.PI : 3.141592653589793 
   - Math.random() : 랜덤한 실수 0 ~ 0.999999 까지 (1은 포함이 안됨)
     + 왜? 1은 포함하지 않는 걸까??
@@ -45,10 +59,24 @@
 
   ```
 
+  - [sqrt()](http://www.w3schools.com/jsref/jsref_sqrt.asp)
+      - 전달된 인자의 제곱근을 반환.
+  - [pow(인자1, 인자2)](http://www.w3schools.com/jsref/jsref_pow.asp)
+      - 인자 1의 값을 인자2의 거듭 제곱
+      - pow(3, 2) : 3 * 3 값 반환
+      - pow(3, 4) : 3 * 3 * 3 * 3 값 반환
 
-###Data
-###String
-###Array
+###[Data](http://www.w3schools.com/jsref/jsref_obj_date.asp)
+
+
+###[Array](http://www.w3schools.com/jsref/jsref_obj_array.asp)
+- [reduce()](http://www.w3schools.com/jsref/jsref_reduce.asp)
+  + 배열을 단일 값으로 줄입니다.
+  + 배열의 각 값에 대해 제공된 함수를 실행합니다.
+  + 함수의 반환 값은 누산기 (결과 / 합계)에 저장됩니다.
+  + 값이없는 배열 요소에 대해 함수를 실행하지 않습니다.
+
+---
 
 ###타이머함수
 - 일정 주기(Interval) 마다 반복하여 실행되는 함수
