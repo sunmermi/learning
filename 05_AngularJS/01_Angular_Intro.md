@@ -1,4 +1,4 @@
-#Angular JS
+# Angular JS
 - [Angular](https://angularjs.org/)
 - [Angular w3schools](http://www.w3schools.com/angular/default.asp)
 - 앵귤러는 자바스크립트로 만들어진 프레임워크다.
@@ -27,7 +27,7 @@
     - 또한 undefind, null 값은 앵귤러에서는 무시한다.
     - JS는 script요소 안에 작성을 해야하지만 앵귤러는 HTML코드에 속성으로 작성하면 된다.
 
-###AngularJS Extends HTML
+### AngularJS Extends HTML
 - 앵귤러는 HTML에 'ng-' 를 붙여서 확장해서 사용한다. 즉, 새로운것을 사용하는 것이 아니라 알고있는 HTML에다가 속성추가만 하면서 기능을 확장한다.!!!
     + ng-app  
         * 이 부분은 앵귤러의 응용프로그램 이란걸 정의!!!!!
@@ -55,4 +55,7 @@
 
 ```
 
+### data-ng-...
+- ng 는 앵귤러를 나타냄 그런데 html요소에서 비표준!! 
+- 비표준을 표준적이기 위해  ==>  data-ng-app   이렇게 붙여준다. 
 
