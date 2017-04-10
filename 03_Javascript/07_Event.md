@@ -1,4 +1,4 @@
-#이벤트 
+# 이벤트 
 
 1. 이벤트를 추가
   - 이벤트의 초기 값은 null
@@ -50,7 +50,7 @@ document.onclick = oneClick() ;
   + 현재 이벤트가 상위로 전파되지 않도록 중단한다.
 
 
-###이벤트 전파 현상
+### 이벤트 전파 현상
 1. 이벤트 버블(false), 이벤트 캡쳐(true)
     -  false 버블링 (Event Bubbling) : 기본값
         +  버블링(false)는 이벤트가 발생한 target element부터 부모한테까지 이벤트가 순차적으로 전파
@@ -97,9 +97,22 @@ slogan = document.querySelector('.slogan');
 
 [이벤트 차단 참고 블러그](http://cheolguso.com/javascript-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81%EA%B3%BC-%EA%B8%B0%EB%B3%B8-%EB%8F%99%EC%9E%91-%EC%A4%91%EB%8B%A8%ED%95%98%EA%B8%B0/)
 
+
+### 마우스 이벤트 : 이벤트 전파 현상
+- **mouseout, mouseover**
+  + [mouseover 설명](http://api.jquery.com/mouseover/)
+  + 마우스 움직임이 자식 엘리먼트에 접근했을 때도 이벤트가 걸린 요소에 계속 영향을 미침 ( == 버블링) 그래서 요소 마우스를 안에서 움직일 때마다 이벤트 발생!! 성능저하..
+  + mouseout : 마우스가 요소를 벗어날 때
+  + mouseover : 마우스가 요소 안에 들어올 때
+- **mouseenter, mouseleave**
+  + [mouseleave 설명](http://api.jquery.com/mouseleave/)
+  + 오로지 이벤트가 걸린 요소 영역에서만 이벤트 발생 => 자식 엘리먼트에는 동작하지 않는다.
+  + mouseenter : 마우스가 요소의 밖에서 안으로 움직일 때
+  + mouseleave : 마우스가 요소의 안에서 밖으로 움직일 때
+
 ---
 
-###이벤트위임
+### 이벤트위임
 - 부모에게 이벤트를 줬을 때 자식이 그 이벤트를 위임한다.
 - `$('부모요소').on('이벤트타입', '자식요소', function(){});`
 - 부모객체에 이벤트가 일어나면 부모의 a요소로 이벤트가 전달되서 펑션실행
@@ -136,7 +149,7 @@ $('.demo').on('click', 'a', function(){});
 
 ```
 
-### `<a>` 요소에 이벤트 
+###  `<a>` 요소에 이벤트 
 - a 요소는 본래 `href="#"` 속성을 가지고 있는데 이 속성은 웹브라우저에게 a 요소 클릭시 이동해야 할 페이지를 가르킨다.
 - a 요소에 이벤트를 걸게 되면 ==> 결국 a 요소는 2개의 동작을 하게 됨
   1. 클릭 이벤트 발생
@@ -159,6 +172,6 @@ $('.demo').on('click', 'a', function(){});
   + li 요소엔 포커싱이 안간다 접근성이 떨어져서 a요소에 이벤트를 걸어 주는 것이 좋다  
 
 
-####이벤트 관련 참고블러그
+#### 이벤트 관련 참고블러그
 - [참고블러그](http://poiemaweb.com/js-event)
 
