@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="section_cont game_baseball">
+    <strong>숫자야구 게임</strong>
+    <form class="form_answer">
+      <input type="text" placeholder="숫자 입력" class="input_answer" maxlength="4">
+      <button type="submit" class="btn_game">입력</button>
+    </form>
+    <div class="resulte_area">
+      결과 : <span class="resulte_txt">4자리 숫자 입력 후 입력버튼 클릭!</span>
+    </div>
+    <button type="button" disabled="disabled" class="btn_restart">게임 재시작</button>
+  </section>
+
+  <section class="section_cont game_tictacto">
+    <strong>틱택토 게임</strong>
+    <button class="game_start" style="display: block;">게임 시작</button>
+    <!-- <table class="table_tictacto">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table> -->
+  </section>
+
+  <!-- <script src="baseball.js"></script> -->
+  <script src="tictacto.js"></script>
+</body>
+</html>

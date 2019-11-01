@@ -1,7 +1,7 @@
 # learning
 front end developer of a study
 
-##HTML
+## HTML
   1. [Basic and other](https://github.com/sseom/learning/blob/master/01_HTML/01_basic.md)
     - html, doctype, html lang="ko-KR", head, meta, title, link, Favicon, script, style, 경로, IE 조건부 주석문, HTML 엔티티 코드
   2. [Element](https://github.com/sseom/learning/blob/master/01_HTML/02_element.md)
@@ -10,7 +10,7 @@ front end developer of a study
     - 구조
 
 
-##CSS
+## CSS
   1. [selector table](https://github.com/sseom/learning/blob/master/02_CSS/01_selector-table.md)
   2. [선택자](https://github.com/sseom/learning/blob/master/02_CSS/02_selector.md)
   3. [단위](https://github.com/sseom/learning/blob/master/02_CSS/03_unit-size.md)
@@ -19,7 +19,7 @@ front end developer of a study
   6. [박스모델 : 패딩, 마진, 보더]()
 
 
-##JavaScript
+## JavaScript
   1. [Basic and other](https://github.com/sseom/learning/blob/master/03_Javascript/01_js_basic.md)
   2. [Variables : 변수](https://github.com/sseom/learning/blob/master/03_Javascript/02_variables.md)
   3. Data Type :
@@ -43,11 +43,11 @@ front end developer of a study
   99. [ing,,,, 미정리된,, 진행중인](https://github.com/sseom/learning/blob/master/03_Javascript/99_ing.md)
 
 
-##Ajax 와 JSON
+## Ajax 와 JSON
   1. [Ajax](https://github.com/sseom/learning/blob/master/04_Ajax_JSON/01_Ajax.md)
   2. [JSON](https://github.com/sseom/learning/blob/master/04_Ajax_JSON/02_JSON.md)
 
-##AngularJS
+## AngularJS
   1. [Intro](https://github.com/sseom/learning/blob/master/05_AngularJS/01_Angular_Intro.md)
   2. [Expressions](https://github.com/sseom/learning/blob/master/05_AngularJS/02_Angular_Expressions.md)
   3. [Modules](https://github.com/sseom/learning/blob/master/05_AngularJS/03_Angular_Modules.md)
@@ -56,12 +56,12 @@ front end developer of a study
   6. [Controllers](https://github.com/sseom/learning/blob/master/05_AngularJS/06_Angular_Controllers.md)
   7. [Filters](https://github.com/sseom/learning/blob/master/05_AngularJS/07_Angular_Filters.md)
 
-##Gulp
+## Gulp
   1. [Gulp + sass-gulp-module](https://github.com/sseom/learning/blob/master/05_AngularJS/01_gulp.md)
 
-##알고리즘 문제
+## 알고리즘 문제
   - [알고리즘 intro](https://github.com/sseom/learning/blob/master/77_algorithm/README.md)
   - [알고리즘 문제 실행 페이지](https://sseom.github.io/learning/77_algorithm/level-1/)
 
-##example
+## example
   - [자바스크립트 예제](https://github.com/sseom/learning/blob/master/99_exe/README.md)

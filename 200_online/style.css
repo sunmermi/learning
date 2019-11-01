@@ -1,0 +1,20 @@
+.section_cont{
+  border: 1px solid #000;
+  margin: 20px;
+  padding: 20px;
+}
+button, .input_answer{
+  width: 100px;
+  height: 30px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.table_tictacto{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.table_tictacto td{
+  border: 1px solid #000;
+}
