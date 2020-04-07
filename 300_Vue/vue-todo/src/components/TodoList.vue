@@ -2,7 +2,7 @@
   <div>
     <!-- 인풋에 입력한 저장된 값을 보여줌 -->
     <ul>
-      <li class="shadow" v-for="(todoItem, index) in todoItems" :key="todoItem.item">
+      <li class="shadow" v-for="(todoItem, index) in propsdata" :key="todoItem.item">
         <i 
           class="checkBtn fas fa-check" 
           v-bind:class="{checkBtnCompleted: todoItem.comlpeted}"
@@ -23,6 +23,35 @@
 
 <script>
 export default {
+  props: [
+    'propsdata',
+  ],
+  data(){
+    return {}
+  },
+  methods: {
+    removeTodo: function(item, index){
+      console.log(item, index);
+      localStorage.removeItem(item);
+      this.todoItems.splice(index, 1);
+      // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
+      // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
+      // 참고 : https://im-developer.tistory.com/103
+    },
+    toogleComplete: function(item){
+      item.comlpeted = !item.comlpeted; 
+      // 로컬스토리지 갱신
+      localStorage.removeItem(item.item); // 해당아이템을 지우고
+      localStorage.setItem(item.item, JSON.stringify(item)); // 변경된값을 다시 string으로 넣어줌
+    },
+  },
+}
+</script>
+
+<script>
+/* 메모
+  app.vue 이동 후 프롭스로 데이터를 받는다.
+  
   data: function(){
     return {
       todoItems: [],
@@ -46,23 +75,7 @@ export default {
     }
     // console.log(this.todoItems);
   },
-  methods: {
-    removeTodo: function(item, index){
-      console.log(item, index);
-      localStorage.removeItem(item);
-      this.todoItems.splice(index, 1);
-      // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
-      // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
-      // 참고 : https://im-developer.tistory.com/103
-    },
-    toogleComplete: function(item){
-      item.comlpeted = !item.comlpeted; 
-      // 로컬스토리지 갱신
-      localStorage.removeItem(item.item); // 해당아이템을 지우고
-      localStorage.setItem(item.item, JSON.stringify(item)); // 변경된값을 다시 string으로 넣어줌
-    },
-  },
-}
+*/
 </script>
 
 <style scoped>

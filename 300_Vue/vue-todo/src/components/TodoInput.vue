@@ -52,6 +52,7 @@ export default {
     position: relative;
     overflow: hidden;
     height: 50px;
+    border: 1px solid #dcdcdc;
     border-radius: 5px;
     line-height: 50px;
     background: white;
@@ -71,7 +72,6 @@ export default {
     width: 3rem;
     height: 100%;
     border: 0 none;
-    border-radius: 0 5px 5px 0;
     background: linear-gradient(to right, #6478FB, #8763FB);
   }
   .addBtn {

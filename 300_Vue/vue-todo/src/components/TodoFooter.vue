@@ -21,6 +21,7 @@ export default {
   display: block;
   width: 8.5rem;
   height: 50px;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
   margin: 0 auto;
   line-height: 50px;
