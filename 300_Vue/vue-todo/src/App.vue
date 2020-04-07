@@ -8,7 +8,11 @@
     <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
     <!-- v-bind:내려보낼 프롭스 속성이름="현 위치의 컴포넌트 데이터 속성" -->
     <!-- todoItems를 넣은 propsdata를 내려보낸다  -->
-    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem"></TodoList>
+    <TodoList 
+      v-bind:propsdata="todoItems" 
+      v-on:removeItem="removeOneItem"
+      v-on:toogleItem="toogleOneItem"
+    ></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -61,6 +65,17 @@ export default {
       // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
       // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
       // 참고 : https://im-developer.tistory.com/103
+    },
+    toogleOneItem: function(todoItem, index){
+      // todoItem.comlpeted = !todoItem.comlpeted; => 안티패턴이됨 왜? 
+      // 앱뷰에서 투두아이템을 프롭스로 내렸고 자식컴포넌트는 그 프롭스를 받아서 
+      // 그것을 또 접근해서 다시 위로 올려서 받은 것은 좋지 않은 패턴임 
+      // 앱뷰는 컨테이너의 성격을 가지고있기 때문에 앱뷰의 todoItems 데이터를 접근하는것이 옳은것같다
+      this.todoItems[index].comlpeted = !this.todoItems[index].comlpeted;
+      
+      // 로컬스토리지 갱신
+      localStorage.removeItem(todoItem.item); // 해당아이템을 지우고
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); // 변경된값을 다시 string으로 넣어줌
     },
   },
 }

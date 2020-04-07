@@ -32,13 +32,9 @@ export default {
   methods: {
     removeTodo: function(todoItem, index){
       this.$emit('removeItem', todoItem, index);
-      
     },
-    toogleComplete: function(todoItem){
-      todoItem.comlpeted = !todoItem.comlpeted; 
-      // 로컬스토리지 갱신
-      localStorage.removeItem(todoItem.item); // 해당아이템을 지우고
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); // 변경된값을 다시 string으로 넣어줌
+    toogleComplete: function(todoItem, index){
+      this.$emit('toogleItem', todoItem, index);
     },
   },
 }
