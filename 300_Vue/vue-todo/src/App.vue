@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput></TodoInput>
+    <!-- 이벤트 $emit
+      v-on:하위 컴포넌트에서 발생시킨 이벤트 이름="현 컴포넌트의 메서드 이름"
+      input 에서 이벤트가 발생되면 자식 컴포넌트에서 이벤트가 올라와서 addOneItem를 실행
+    -->
+    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
     <!-- v-bind:내려보낼 프롭스 속성이름="현 위치의 컴포넌트 데이터 속성" -->
     <!-- todoItems를 넣은 propsdata를 내려보낸다  -->
     <TodoList v-bind:propsdata="todoItems"></TodoList>
@@ -43,11 +47,20 @@ export default {
       }
     }
   },
+  methods: {
+    addOneItem: function(todoitem){ // 투두아이템을 추가하는 기능
+      var obj = {comlpeted: false, item: todoitem}; 
+      localStorage.setItem(todoitem, JSON.stringify(obj));
+      this.todoItems.push(obj);
+    },
+  },
 }
 </script>
 
 <style>
 body{
+  margin: 0;
+  padding: 0;
   text-align: center;
   background-color: #f6f6f6;
 }
@@ -55,6 +68,8 @@ body{
   min-width: 320px;
   max-width: 400px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .shadow{
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);

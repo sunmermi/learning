@@ -18,22 +18,11 @@ export default {
     }
   },
   methods: {
-    addTodo: function(){
-      // console.log(this.newTodoItem);
-
-      // 저장하는 로직 수행후 인풋 초기화
-      // localStorage.setItem(키, 밸류);
-
-      // 1.
-      // localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      // this.clearInput();
-
-      // 2.
-      // 체크 유무 
+    addTodo: function(){ // 저장하는 로직 수행후 인풋 초기화
       if(this.newTodoItem !== ''){ //아이템이 빈값이 아니라면
-        var obj = {comlpeted: false, item: this.newTodoItem}; 
-        // JSON.stringify(obj) 값은 String으로 넣어짐
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        // 상위로 보내주는 이벤트 this.$emit('이벤트이름', 인자1 , 인자2, ...);
+        // addTodoItem이라는 이벤트가 this.newTodoItem 포함해서 상위로 올라감 
+        this.$emit('addTodoItem', this.newTodoItem);
         this.clearInput();
       }
     },
@@ -42,6 +31,33 @@ export default {
     },
   }
 }
+
+/* 메모
+methods: {
+  addTodo: function(){
+    // console.log(this.newTodoItem);
+
+    // 저장하는 로직 수행후 인풋 초기화
+    // localStorage.setItem(키, 밸류);
+
+    // 1.
+    // localStorage.setItem(this.newTodoItem, this.newTodoItem);
+    // this.clearInput();
+
+    // 2.
+    // 체크 유무 
+    if(this.newTodoItem !== ''){ //아이템이 빈값이 아니라면
+      var obj = {comlpeted: false, item: this.newTodoItem}; 
+      // JSON.stringify(obj) 값은 String으로 넣어짐
+      localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+      this.clearInput();
+    }
+  },
+  clearInput: function(){
+    this.newTodoItem = '';
+  },
+}
+*/
 </script>
 
 <style scoped>

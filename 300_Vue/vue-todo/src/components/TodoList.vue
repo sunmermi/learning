@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     removeTodo: function(item, index){
-      console.log(item, index);
       localStorage.removeItem(item);
       this.todoItems.splice(index, 1);
       // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
@@ -46,9 +45,7 @@ export default {
     },
   },
 }
-</script>
 
-<script>
 /* 메모
   app.vue 이동 후 프롭스로 데이터를 받는다.
   
@@ -113,6 +110,7 @@ export default {
     border: 0 none;
     margin-left: auto;
     font-size: 1.2rem;
+    background: none;
     color: #de4343;
   }
 
