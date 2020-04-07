@@ -8,7 +8,7 @@
     <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
     <!-- v-bind:내려보낼 프롭스 속성이름="현 위치의 컴포넌트 데이터 속성" -->
     <!-- todoItems를 넣은 propsdata를 내려보낸다  -->
-    <TodoList v-bind:propsdata="todoItems"></TodoList>
+    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem"></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -48,10 +48,19 @@ export default {
     }
   },
   methods: {
-    addOneItem: function(todoitem){ // 투두아이템을 추가하는 기능
-      var obj = {comlpeted: false, item: todoitem}; 
-      localStorage.setItem(todoitem, JSON.stringify(obj));
+    addOneItem: function(todoItem){ // 투두아이템을 추가하는 기능
+      var obj = {comlpeted: false, item: todoItem}; 
+      localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
+    },
+    removeOneItem: function(todoItem, index){
+      // console.log(todoItem); // object
+      // removeItem(todoItem.item) 오브젝트의 키값을 접근해서 지움 -> 키와 아이템의값을 동일하게해서 가능한 부분
+      localStorage.removeItem(todoItem.item); 
+      this.todoItems.splice(index, 1);
+      // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
+      // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
+      // 참고 : https://im-developer.tistory.com/103
     },
   },
 }

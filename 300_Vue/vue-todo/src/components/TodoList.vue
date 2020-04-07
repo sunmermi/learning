@@ -13,7 +13,7 @@
           v-bind:class="{textCompleted: todoItem.comlpeted}"
         >{{ todoItem.item }}</span>
 
-        <button class="removeBtn" v-on:click="removeTodo(item, index)">
+        <button class="removeBtn" v-on:click="removeTodo(todoItem, index)">
           <i class="fas fa-trash-alt"></i>
         </button>
       </li>
@@ -30,23 +30,21 @@ export default {
     return {}
   },
   methods: {
-    removeTodo: function(item, index){
-      localStorage.removeItem(item);
-      this.todoItems.splice(index, 1);
-      // splice(인덱스, 삭제갯수) 잘라내고 배열을 반환 + 원본배열을 수정
-      // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
-      // 참고 : https://im-developer.tistory.com/103
+    removeTodo: function(todoItem, index){
+      this.$emit('removeItem', todoItem, index);
+      
     },
-    toogleComplete: function(item){
-      item.comlpeted = !item.comlpeted; 
+    toogleComplete: function(todoItem){
+      todoItem.comlpeted = !todoItem.comlpeted; 
       // 로컬스토리지 갱신
-      localStorage.removeItem(item.item); // 해당아이템을 지우고
-      localStorage.setItem(item.item, JSON.stringify(item)); // 변경된값을 다시 string으로 넣어줌
+      localStorage.removeItem(todoItem.item); // 해당아이템을 지우고
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); // 변경된값을 다시 string으로 넣어줌
     },
   },
 }
 
 /* 메모
+  !! 여기서는 최대한 표현만 하고 이벤트는 모두 app.vue에서 할수있도록 로직 설계 !!
   app.vue 이동 후 프롭스로 데이터를 받는다.
   
   data: function(){
