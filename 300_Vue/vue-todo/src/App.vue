@@ -13,7 +13,7 @@
       v-on:removeItem="removeOneItem"
       v-on:toogleItem="toogleOneItem"
     ></TodoList>
-    <TodoFooter></TodoFooter>
+    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
   </div>
 </template>
 
@@ -77,6 +77,10 @@ export default {
       localStorage.removeItem(todoItem.item); // 해당아이템을 지우고
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); // 변경된값을 다시 string으로 넣어줌
     },
+    clearAllItems: function(){
+      localStorage.clear();
+      this.todoItems = [];
+    },
   },
 }
 </script>
@@ -89,7 +93,7 @@ body{
   background-color: #f6f6f6;
 }
 #app{
-  min-width: 320px;
+  width: 80%;
   max-width: 400px;
   margin: 0 auto;
   padding: 0 20px;
