@@ -7,15 +7,30 @@
     <button class="addContainer" v-on:click="addTodo">
       <i class="fas fa-plus addBtn"></i>
     </button>
+
+    <Modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        경고! 
+        <i class="fas fa-times closeModalBtn" @click="showModal = false"></i>
+      </h3>
+      <div slot="body">경고 내용</div>
+      <div slot="footer">끝</div>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal';
+
 export default {
   data: function(){
     return {
       newTodoItem: '',
+      showModal: false,
     }
+  },
+  components: {
+    Modal: Modal,
   },
   methods: {
     addTodo: function(){ // 저장하는 로직 수행후 인풋 초기화
@@ -24,6 +39,8 @@ export default {
         // addTodoItem이라는 이벤트가 this.newTodoItem 포함해서 상위로 올라감 
         this.$emit('addTodoItem', this.newTodoItem);
         this.clearInput();
+      }else{
+        this.showModal = !this.showModal;
       }
     },
     clearInput: function(){

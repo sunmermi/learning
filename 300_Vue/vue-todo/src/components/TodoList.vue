@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- 인풋에 입력한 저장된 값을 보여줌 -->
-    <ul>
+    <!-- list : css클래스와 관련되어있음 -->
+    <transition-group name="list" tag="ul">
       <li class="shadow" v-for="(todoItem, index) in propsdata" :key="todoItem.item">
         <i 
           class="checkBtn fas fa-check" 
@@ -17,7 +18,7 @@
           <i class="fas fa-trash-alt"></i>
         </button>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
@@ -116,4 +117,15 @@ export default {
     opacity: 0;
     transform: translateY(30px);
   }
+
+  /* 리스트 아이템 트렌지션 */
+  .list-enter-active, .list-leave-active {
+    transition: all 1s;
+  }
+  .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+
 </style>
