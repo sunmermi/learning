@@ -38,13 +38,13 @@ export default {
   },
   created(){ // 라이프 싸이클 created : 인스턴스가 생정되자마자 실행되는 로직
     if(localStorage.length > 0){
-      for(var i = 0; i < localStorage.length; i++){
+      for(let i = 0; i < localStorage.length; i++){
         if(localStorage.key(i) !== 'loglevel:webpack-dev-server' && localStorage.key(i) !== ""){
           // this.todoItems.push(localStorage.key(i));
 
           // localStorage.getItem(localStorage.key(i)); string로 나옴
           // 이것을 parse 사용해서 오브젝트로 만들어서 todoItems 배열에 데이터를 넣어줌
-          var objItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+          const objItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
           this.todoItems.push(objItem);
         }
         
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     addOneItem: function(todoItem){ // 투두아이템을 추가하는 기능
-      var obj = {comlpeted: false, item: todoItem}; 
+      const obj = {comlpeted: false, item: todoItem}; 
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
