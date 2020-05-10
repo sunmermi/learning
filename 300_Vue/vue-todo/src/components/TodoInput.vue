@@ -23,7 +23,7 @@
 import Modal from './common/Modal';
 
 export default {
-  data: function(){
+  data(){
     return {
       newTodoItem: '',
       showModal: false,
@@ -33,7 +33,7 @@ export default {
     Modal: Modal,
   },
   methods: {
-    addTodo: function(){ // 저장하는 로직 수행후 인풋 초기화
+    addTodo(){ // 저장하는 로직 수행후 인풋 초기화
       if(this.newTodoItem !== ''){ //아이템이 빈값이 아니라면
         // 상위로 보내주는 이벤트 this.$emit('이벤트이름', 인자1 , 인자2, ...);
         // addTodoItem이라는 이벤트가 this.newTodoItem 포함해서 상위로 올라감 
@@ -43,7 +43,7 @@ export default {
         this.showModal = !this.showModal;
       }
     },
-    clearInput: function(){
+    clearInput(){
       this.newTodoItem = '';
     },
   }

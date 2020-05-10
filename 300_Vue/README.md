@@ -10,6 +10,7 @@
 
 #### 섹션 6. ES6 for Vue.js - 오리엔테이션
 - 바벨 : ES6 문법을 각 브라우저 호환이 가능한 ES5로 변환하는 컴파일러
+  - [ Babel 온라인 에디터 링크](http://bitly.kr/fFcezSKq2)
 - 강의에서 배울것 : const & let, 화살표함수, Enhanced Object Literals, Modules
 - ES6로 주로 사용하는 기능은 const & let, 화살표함수 그외 기타는 디스트럭처링, spread 연산자 정도...
   - [const & let](https://poiemaweb.com/es6-block-scope)
@@ -87,24 +88,68 @@ console.log(d); // [20]
   ~~~
     
 - ex. js 해석기가 어떻게 코드 순서를 재조정할까요?
+  ~~~
+  var sum = 5;
+  sum = sum + i; // 5
+  function sumAllNumbers(){
+    // ...
+  } 
+  var i = 10;
+
+  // 순서
+  // 1. 함수선언식과 변수 선언을 호이스팅
+  var sum;
+  function sumAllNumbers(){
+    // ...
+  } 
+  var i;
+
+  // 2. 변수 대입 및 할당
+  sum = 5;
+  sum = sum + i;
+  i = 10;
+  ~~~
+   
+#### 섹션 8. ES6 for Vue.js - 화살표 함수
+- 함수를 정의할 때 function 이라는 키워드를 사용하지 않고 `=>` 로 대체
+- 콜백함수의 문법을 간결화 ? 
 ~~~
-var sum = 5;
-sum = sum + i; // 5
-function sumAllNumbers(){
-  // ...
-} 
-var i = 10;
+// ES5 
+var sum = function(a,b){
+  return a+b;
+}
+// ES6
+var sum =  (a,b) => {
+  return a+b;
+}
 
-// 순서
-// 1. 함수선언식과 변수 선언을 호이스팅
-var sum;
-function sumAllNumbers(){
-  // ...
-} 
-var i;
+// 인자가 하나일 경우 괄호 없이 사용 가능
+var sum =  val => {
+  return a+b;
+}
+~~~
 
-// 2. 변수 대입 및 할당
-sum = 5;
-sum = sum + i;
-i = 10;
+#### 섹션 9. ES6 for Vue.js - Enhanced Object Literals
+- 향상된 객체 리터럴
+- 객체의 속성을 메서드로 사용할때 function 예약어를 생략하고 생성 가능
+~~~
+var dictionary = {
+  words: 100,
+  // ES5
+  looup: function(){
+    console.log('ES5');
+  },
+  // ES6
+  looup() {
+    console.log('ES6');
+  },
+}
+
+// 속성명 축약
+var dictionary: {
+  // 'TodoHeader': TodoHeader,
+  // 'TodoInput': TodoInput,
+  TodoHeader,
+  TodoInput,
+},
 ~~~

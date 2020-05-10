@@ -52,12 +52,12 @@ export default {
     }
   },
   methods: {
-    addOneItem: function(todoItem){ // 투두아이템을 추가하는 기능
+    addOneItem(todoItem){ // 투두아이템을 추가하는 기능
       const obj = {comlpeted: false, item: todoItem}; 
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
-    removeOneItem: function(todoItem, index){
+    removeOneItem(todoItem, index){
       // console.log(todoItem); // object
       // removeItem(todoItem.item) 오브젝트의 키값을 접근해서 지움 -> 키와 아이템의값을 동일하게해서 가능한 부분
       localStorage.removeItem(todoItem.item); 
@@ -66,7 +66,7 @@ export default {
       // slice()는 잘라낸 배열을 반환 + 원본배열을 그대로
       // 참고 : https://im-developer.tistory.com/103
     },
-    toogleOneItem: function(todoItem, index){
+    toogleOneItem(todoItem, index){
       // todoItem.comlpeted = !todoItem.comlpeted; => 안티패턴이됨 왜? 
       // 앱뷰에서 투두아이템을 프롭스로 내렸고 자식컴포넌트는 그 프롭스를 받아서 
       // 그것을 또 접근해서 다시 위로 올려서 받은 것은 좋지 않은 패턴임 
@@ -77,7 +77,7 @@ export default {
       localStorage.removeItem(todoItem.item); // 해당아이템을 지우고
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem)); // 변경된값을 다시 string으로 넣어줌
     },
-    clearAllItems: function(){
+    clearAllItems(){
       localStorage.clear();
       this.todoItems = [];
     },

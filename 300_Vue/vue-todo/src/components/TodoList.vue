@@ -31,10 +31,10 @@ export default {
     return {}
   },
   methods: {
-    removeTodo: function(todoItem, index){
+    removeTodo(todoItem, index){
       this.$emit('removeItem', todoItem, index);
     },
-    toogleComplete: function(todoItem, index){
+    toogleComplete(todoItem, index){
       this.$emit('toogleItem', todoItem, index);
     },
   },
