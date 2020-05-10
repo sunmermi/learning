@@ -153,3 +153,36 @@ var dictionary: {
   TodoInput,
 },
 ~~~
+    
+#### 섹션 10. ES6 for Vue.js - Modules
+- JS ES5는 모듈화 방법이 없었음. 파일을 나눈다고해서 스코프가 분리되지 않았음. 
+- 모듈화란? 특정기술을 수행하는 한 묶음 덩어리.
+- 모듈화 하는 이유? 재사용성이 뛰어난 기능들을 묶어서 필요할때마다 가져다 쓰기 위해
+- ES6는 자바스크립트 모듈 로더 라이브러리(AMD, Commons JS) 기능을 js언어 자체에서 지원
+~~~
+// math.js
+export function sum(a,b){
+  return a + b;
+}
+
+// main.js
+import {sum} from 'math.js';
+sum(1,2); // 3
+
+
+
+// Vue에서 export default : 한개의 파일에선 한번밖에 쓸수 없음
+// math.js
+export function sum(a,b){
+  return a + b;
+}
+
+// 같은 파일을 다른 이름으로 부여해서 사용할수있음
+// main.js
+import {util} from 'math.js';
+util(1,2); // 3
+
+// app.js
+import {hi} from 'math.js';
+hi(1,2); // 3
+~~~
