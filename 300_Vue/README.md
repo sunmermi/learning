@@ -186,3 +186,61 @@ util(1,2); // 3
 import {hi} from 'math.js';
 hi(1,2); // 3
 ~~~
+   
+#### 섹션 11. Vuex - 소개
+- Vuex 소개 : 상태 관리 라이브러리
+  - 복잡한 애플리케이션의 컴포넌트 들을 효율적으로 관리하는 Veux 라이브러리 => 상태관리 패턴
+- Vuex 학습 목차
+  - Vuex 란
+  - Flux패턴 : 컴포넌트가 많아졌을때 어떻게 관리 할것인가? Flux패턴 도입
+  - Veux 컨셉과 구조
+  - Veux 설치 밒 시작하기
+  - Veux 기술요소 state(데이터), getters(컴퓨티드), mutations(메서드), actions(비동기메서드)
+  - Veux Helper : Veux 더쉽게  Helper 기능소개
+  - Veux로 프로젝트 구조화 미 모듈화하는 방법
+   
+*Flux와 MVC 패턴 소개 및 Flux 등장 배경*
+- Vuex란? 
+  - 무수히 많은 컴포넌트의 데이터를 관리하기 위한 상태 관리 패턴이자 라이브러리
+  - 리액트의 Flux 패턴에서 기인함 
+  - Vue.js 중고급 개발자로 성정하기 위한 필수 관문
+- Flux란?
+  - MVC 패턴의 복잡한 데이터 흐름 문제를 해결하는 개발 패턴
+    - 페북 : 한개의 뷰가 바꼈을때 다른뷰에서 데이터를 추적하기 힘들다 워낙에 거대한 앱이기때문에.. 그래서 플럭스를 만듬
+    - 오래전부터 개발된 패턴 양방향
+    - 3개의 주요 요소들 : controller -> model -> <- view
+      - 모든 데이터가 모델에 담겨있고
+      - 컨트롤러는 모델과 뷰를 제어하는 역할 : 데이터 처리가 여러가지방향으로 일어남??
+    - 문제점
+      - 기능 추가 및 변경에 따라 생기는 분제점을 예측할수가 없음 (예. 페북 채팅화면)
+      - 앱이 복잡해 지면서 생기는 업데이트 루프 : 컨트롤러는 한나가 있고 모델과 뷰가 엄청 많고.. 
+      - ![Flux 공식 이미지 | 복잡한 MVC 패턴](https://www.huskyhoochu.com/flux-architecture/complex_mvc.png)
+  - 데이터의 흐름이 한방향으로만 흐른다. (뷰예.부모에서 자식한테만 데이터를 내림. 한방향)
+  - action, dispatcher, model, view : 단방향!! 예측가능!!
+    - action : 화면에서 발생하는 이벤트 또는 사용자의 입렵
+    - dispatcher : 데이터를 변경하는 방법, 메서드
+    - model : 화면에 표시할 데이터
+    - view : 사용자에게 비춰지는 화면
+    - ![Flux 공식 이미지 | Flux 패턴](https://www.huskyhoochu.com/flux-architecture/flux_simple.png)
+  - [참고 : '데이터가 폭포수처럼 흘러내려' React의 flux 패턴](https://www.huskyhoochu.com/flux-architecture/)
+  - [참고 : Flux로의 카툰 안내서](https://bestalign.github.io/2015/10/06/cartoon-guide-to-flux/)
+  - [참고 : MVC패턴](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC)
+  - [참고 : [디자인패턴] MVC 패턴이란?](https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4-mvc-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80-1d74fac6e256)
+   
+*Vuex가 필요한 이유, Vuex 컨셉, Vuex 구조*
+- Vuex로 해결할 수 있는 문제들
+  - MVC 패턴에서 발생하는 구조적 오류
+  - 컴포넌트 간 데이터 전달 명시
+  - 여러 개의 컴포넌트에서 같은 데이터를 업데이트 할 때 동기화 문제
+- Vuex 컨셉
+  - State : 컴포넌트 간에 공유하는 데이터 data()
+  - View : 데이터를 표시하는 화면 template
+  - Action : 사용자의 입력에 따라 데이터를 변경하는 methods
+  - ![단방향 데이터 흐름 처리를 단순하게 도식화한 그림](https://vuex.vuejs.org/flow.png)
+  - 단방향 데이터 흐름 처리를 단순하게 도식화한 그림
+- Vuex 구조
+  - 컴포넌트 -> 비동기 로직(Actions) -> 동기 로직(Mutations) -> 상태
+  - Actions에서는 데이터를 바꾸지 않는다 비동기로직만처리 하고 Actions가 데이터를 변경할수 있는 Mutations를 콜하고 Mutations에서만 데이터를 바꿀수있다.
+  - ![Vuex 구조](https://vuex.vuejs.org/vuex.png)
+  - [참고 : 자바스크립트 비동기 처리와 콜백 함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
+  - [참고 : 자바스크립트 Promise 쉽게 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
