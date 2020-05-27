@@ -3,7 +3,7 @@
     <!-- 인풋에 입력한 저장된 값을 보여줌 -->
     <!-- list : css클래스와 관련되어있음 -->
     <transition-group name="list" tag="ul">
-      <li class="shadow" v-for="(todoItem, index) in this.$store.state.todoItems" :key="todoItem.item">
+      <li class="shadow" v-for="(todoItem, index) in propsdata" :key="todoItem.item">
         <i 
           class="checkBtn fas fa-check" 
           v-bind:class="{checkBtnCompleted: todoItem.comlpeted}"
@@ -32,17 +32,10 @@ export default {
   },
   methods: {
     removeTodo(todoItem, index){
-      // const itemObj = {
-      //   todoItem: todoItem, // ES6에서는 키밸류값이 같으면 단축사용 가능 // todoItem
-      //   index: index // ES6에서는 키밸류값이 같으면 단축사용 가능 // index
-      // };
-      // this.$store.commit('removeOneItem', itemObj);
-
-      // ES6
-      this.$store.commit('removeOneItem', {todoItem, index});
+      this.$emit('removeItem', todoItem, index);
     },
     toogleComplete(todoItem, index){
-      this.$store.commit('toogleOneItem', {todoItem,index});
+      this.$emit('toogleItem', todoItem, index);
     },
   },
 }

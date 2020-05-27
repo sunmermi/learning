@@ -37,8 +37,8 @@ export default {
       if(this.newTodoItem !== ''){ //아이템이 빈값이 아니라면
         // 상위로 보내주는 이벤트 this.$emit('이벤트이름', 인자1 , 인자2, ...);
         // addTodoItem이라는 이벤트가 this.newTodoItem 포함해서 상위로 올라감 
-        // this.$emit('addTodoItem', this.newTodoItem);
-        this.$store.commit('addOneItem', this.newTodoItem);
+        this.$emit('addTodoItem', this.newTodoItem);
+        this.$store.commit(addOneItem);
         this.clearInput();
       }else{
         this.showModal = !this.showModal;

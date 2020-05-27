@@ -244,3 +244,46 @@ hi(1,2); // 3
   - ![Vuex 구조](https://vuex.vuejs.org/vuex.png)
   - [참고 : 자바스크립트 비동기 처리와 콜백 함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
   - [참고 : 자바스크립트 Promise 쉽게 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
+
+
+#### 섹션 12. Vuex - 주요 기술 요소
+- [설치 방법](https://vuex.vuejs.org/kr/installation.html)
+- 보통 vuex를 store라고 한다
+- setup : src > store > store.js 생성
+  ~~~
+  import Vue from 'vue'
+  import Vuex from 'vuex'
+
+  Vue.use(Vuex)
+
+  export const store = new Vuex.Store({
+    // ...
+  });
+  ~~~
+
+*Vuex 기술 요소*
+  - *state* : 여러 컴포넌트 간에 공유되는 데이터 data
+  - getters : 연산된 state 값을 접근하는 속성 computed
+  - *mutations*
+    - state 값을 변경하는 이벤트 로직 메서드 *유일한 방법* methods
+    - 뮤테이션은 commit()으로 동작시킨다
+    ~~~
+      // store.js
+      state: {
+        num: 10,
+      },
+      mutations: {
+        printNumbers(state){
+          return state.num;
+        },
+        sumNumbers(state, anotherNum){ // 두번째 인자로 값을 받을 수 있다
+          return state.num + anotherNum;
+        },
+      },
+
+      // App.vue 에서 호출
+      this.$store.commit(printNumbers); // 10
+      this.$store.commit(sumNumbers); // 30
+    ~~~
+    - commit()의 형식
+  - actions : 사용자의 입력에 따라 데이터를 변경하는 aysnc methods (기다렸다가 값을 받아서 뿌려줘야 하는 경우 사용)
