@@ -4,7 +4,7 @@
     <!-- 이벤트를 발생하고 주는것을 store 랑 todoInput애서 직접적으로 하고있음 -->
     <TodoInput></TodoInput>
     <TodoList></TodoList>
-    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 

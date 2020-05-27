@@ -3,18 +3,18 @@
     <!-- 인풋에 입력한 저장된 값을 보여줌 -->
     <!-- list : css클래스와 관련되어있음 -->
     <transition-group name="list" tag="ul">
-      <li class="shadow" v-for="(todoItem, index) in this.$store.state.todoItems" :key="todoItem.item">
+      <li class="shadow" v-for="(todoItem, index) in storedTodoItems" :key="todoItem.item">
         <i 
           class="checkBtn fas fa-check" 
           v-bind:class="{checkBtnCompleted: todoItem.comlpeted}"
-          v-on:click="toogleComplete(todoItem, index)"
+          v-on:click="toogleComplete({todoItem, index})"
         ></i>
 
         <span 
           v-bind:class="{textCompleted: todoItem.comlpeted}"
         >{{ todoItem.item }}</span>
 
-        <button class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+        <button class="removeBtn" v-on:click="removeTodo({todoItem, index})">
           <i class="fas fa-trash-alt"></i>
         </button>
       </li>
@@ -23,6 +23,10 @@
 </template>
 
 <script>
+// import { mapGetters } from 'vuex'
+// import { mapMutations } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   props: [
     'propsdata',
@@ -30,20 +34,35 @@ export default {
   data(){
     return {}
   },
-  methods: {
-    removeTodo(todoItem, index){
-      // const itemObj = {
-      //   todoItem: todoItem, // ES6에서는 키밸류값이 같으면 단축사용 가능 // todoItem
-      //   index: index // ES6에서는 키밸류값이 같으면 단축사용 가능 // index
-      // };
-      // this.$store.commit('removeOneItem', itemObj);
+  computed: {
+    ...mapGetters(['storedTodoItems'])
 
-      // ES6
-      this.$store.commit('removeOneItem', {todoItem, index});
-    },
-    toogleComplete(todoItem, index){
-      this.$store.commit('toogleOneItem', {todoItem,index});
-    },
+    // 겟터랑 사용하려는 컴포넌트에서 사용하는 네임이 다를 경우 => 객체로
+    // ...mapGetters([{
+    //   todoItems: 'storedTodoItems'
+    // })
+
+    // 헬퍼를 사용안할 경우 방법
+    // todoItems(){
+    //   // return this.$store.getters.storedTodoItems;
+    // }
+  },
+  methods: {
+    ...mapMutations({ 
+      // 스토어에 등록된 명과 컴포넌트에서 사용하는 명이 다르니 객체형태로
+      removeTodo: 'removeOneItem',
+      toogleComplete: 'toogleOneItem'
+    }),
+    // => 인자를 사용하지않아도 기능을 호출하는단에서 인자가 있으면 암묵적으로 자동으로 넘겨줌
+    // 단 인자가 2개이상일 경우 객체형태로 넘겨줌
+
+    // 헬퍼를 사용안할 경우 방법
+    // removeTodo(todoItem, index){
+    //   this.$store.commit('removeOneItem', {todoItem, index});
+    // },
+    // toogleComplete(todoItem, index){
+    //   this.$store.commit('toogleOneItem', {todoItem,index});
+    // },
   },
 }
 
