@@ -23,8 +23,6 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
-// import { mapMutations } from 'vuex'
 import { mapGetters, mapMutations } from 'vuex'
 
 export default {
