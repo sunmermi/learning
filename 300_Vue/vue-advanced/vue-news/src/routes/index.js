@@ -1,0 +1,45 @@
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import NewsView from '../views/NewsView.vue';
+import JobsView from '../views/JobsView.vue';
+import AskView from '../views/AskView.vue';
+import UserView from '../views/UserView.vue';
+import ItemView from '../views/ItemView.vue';
+
+// router 기능 확장 선언
+Vue.use(VueRouter);
+
+// router 객체생성
+export const router = new VueRouter({
+  mode: 'history', // # 해시값 제거
+  routes:[
+    // {
+    //   path : url 주소,
+    //   component: url 주소로 갔을 때 표시될 컴포넌트
+    // },
+    {
+      path : '/',
+      redirect: '/news',
+    },
+    {
+      path : '/news',
+      component: NewsView,
+    },
+    {
+      path : '/jobs',
+      component: JobsView,
+    },
+    {
+      path : '/ask',
+      component: AskView,
+    },
+    {
+      path : '/user',
+      component: UserView,
+    },
+    {
+      path : '/item',
+      component: ItemView,
+    },
+  ],
+});
