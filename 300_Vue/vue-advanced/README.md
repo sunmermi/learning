@@ -9,4 +9,7 @@ yarn add vue-router
 // scss 사용
 yarn add sass-loader 
 yarn add node-sass
+
+// axios
+yarn add axios
 ~~~
