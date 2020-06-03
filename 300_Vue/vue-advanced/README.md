@@ -16,3 +16,6 @@ yarn add axios
 // vuex : 상태 관리 도구로 여러 컴포넌트에서 굥유되는 데이터속성
 yarn add vuex
 ~~~
+
+#### ES6 destructuring
+- [destructuring](https://joshua1988.github.io/es6-online-book/destructuring.html)
