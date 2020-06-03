@@ -1,14 +1,36 @@
 
 <template>
   <div>
-    <div v-for="user in this.$store.state.news" :key="user.id">
+    <!-- map 헬퍼함수 : mapGetters 사용 -->
+    <div v-for="user in fetchNews" :key="user.id">
       {{ user.title }}
     </div>
+
+    <!-- map 헬퍼함수를 사용하기전 코드 -->
+    <!-- <div v-for="user in this.$store.state.news" :key="user.id">
+      {{ user.title }}
+    </div> -->
   </div>
 </template>
 
 <script>
+// map 헬퍼함수 : mapGetters 사용
+import { mapGetters } from 'vuex';
+
 export default {
+  computed: {
+    // map 헬퍼함수 : mapGtters 사용 코드
+
+    // mapGtters 객체표기법
+    // ...mapGetters({
+    //   fetchNews: 'fetchNews',
+    //   newsItem: 'fetchNews' // 이름이 다르다면
+    // }),
+
+    // mapGtters 배열표기법 
+    ...mapGetters(['fetchNews'])
+  },
+
   created() { // 컴포넌트가 생성되자마자 실행되는 로직
     this.$store.dispatch('FETCH_NEWS');
   },

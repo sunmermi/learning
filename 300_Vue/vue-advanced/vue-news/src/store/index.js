@@ -15,7 +15,11 @@ export const store = new Vuex.Store({
     jobs: [],
     ask: [],
   },
-  // getters,
+  getters: {
+    fetchNews(state) {
+      return state.news;
+    }
+  }, 
   mutations: {
     // 첫번째 인자는 state
     SET_NEWS(state, data) {
