@@ -4,13 +4,13 @@
     <!-- map 헬퍼함수를 사용하기전 코드 -->
     <!-- <p v-for="item in this.$store.state.ask" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p> -->
 
     <!-- map 헬퍼함수  : mapState 사용 코드 -->
     <p v-for="item in fetchAsk" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p>
   </div>
 </template>

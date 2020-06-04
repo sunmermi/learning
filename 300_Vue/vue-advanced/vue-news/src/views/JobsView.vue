@@ -5,7 +5,7 @@
     <!-- 1. -->
     <!-- <p v-for="item in this.$store.state.jobs" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p> -->
 
     <!-- 2 : 
@@ -14,7 +14,7 @@
       jobs 로 간단하게 사용 -->
     <p v-for="item in jobs" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p>
   </div>
 </template>

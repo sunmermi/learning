@@ -4,15 +4,22 @@
     <!-- map 헬퍼함수를 사용하기전 코드 -->
     <!-- <p v-for="item in this.$store.state.news" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p> -->
 
     <!-- map 헬퍼함수 : mapGetters 사용 -->
     <p v-for="item in fetchNews" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+      <small>
+        {{ item.time_ago }} by 
+        <!-- <router-link :to="'/user/' + item.user">
+          {{ item.user }}
+        </router-link> -->
+        <router-link :to="`/user/${item.user}`">
+          {{ item.user }}
+        </router-link>
+      </small>
     </p> 
-
   </div>
 </template>
 

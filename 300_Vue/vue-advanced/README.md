@@ -19,3 +19,6 @@ yarn add vuex
 
 #### ES6 destructuring
 - [destructuring](https://joshua1988.github.io/es6-online-book/destructuring.html)
+
+#### 동적 라우트
+- [Dynamic Route Matching](https://router.vuejs.org/guide/essentials/dynamic-matching.html)
