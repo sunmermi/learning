@@ -3,7 +3,7 @@
   <div>
     <!-- map 헬퍼함수를 사용하기전 코드 -->
     <!-- 1. -->
-    <!-- <p v-for="job in this.$store.state.jobs" :key="job.id">
+    <!-- <p v-for="item in this.$store.state.jobs" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
       <small>{{ item.time_ago }} by {{ item.domain }}</small>
     </p> -->
@@ -12,7 +12,7 @@
       computed 사용해서 
       this.$store.state.jobs 사용하던걸 
       jobs 로 간단하게 사용 -->
-    <p v-for="job in jobs" :key="job.id">
+    <p v-for="item in jobs" :key="item.id">
       <a :href="item.url" target="_blank">{{ item.title }}</a>
       <small>{{ item.time_ago }} by {{ item.domain }}</small>
     </p>
