@@ -15,7 +15,8 @@ export const router = new VueRouter({
   routes:[
     // {
     //   path : url 주소,
-    //   component: url 주소로 갔을 때 표시될 컴포넌트
+    //   component: url 주소로 갔을 때 표시될 컴포넌트,
+    //   redirect : re(다시) + 지시하다(direct) 다시 지시할 유알엘
     // },
     {
       path : '/',

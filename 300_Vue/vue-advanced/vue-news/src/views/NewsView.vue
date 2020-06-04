@@ -1,15 +1,18 @@
 
 <template>
   <div>
-    <!-- map 헬퍼함수 : mapGetters 사용 -->
-    <div v-for="user in fetchNews" :key="user.id">
-      {{ user.title }}
-    </div>
-
     <!-- map 헬퍼함수를 사용하기전 코드 -->
-    <!-- <div v-for="user in this.$store.state.news" :key="user.id">
-      {{ user.title }}
-    </div> -->
+    <!-- <p v-for="item in this.$store.state.news" :key="item.id">
+      <a :href="item.url" target="_blank">{{ item.title }}</a>
+      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+    </p> -->
+
+    <!-- map 헬퍼함수 : mapGetters 사용 -->
+    <p v-for="item in fetchNews" :key="item.id">
+      <a :href="item.url" target="_blank">{{ item.title }}</a>
+      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+    </p> 
+
   </div>
 </template>
 
