@@ -9,7 +9,7 @@ export default {
       .then(response => {
         // mutations으로 data넘기기 
         // SET_NEWS에 response.dat 넘기기
-        console.log(response);
+        // console.log(response);
         context.commit('SET_NEWS', response.data); 
       })
       .catch(error => {
