@@ -17,10 +17,15 @@ export const store = new Vuex.Store({
     news: [],
     jobs: [],
     ask: [],
+    user: {},
+    item: [],
   },
   getters: {
     fetchNews(state) {
       return state.news;
+    },
+    fetchItem(state) {
+      return state.item;
     }
   },
 

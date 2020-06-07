@@ -9,7 +9,7 @@
 
     <!-- map 헬퍼함수  : mapState 사용 코드 -->
     <p v-for="item in fetchAsk" :key="item.id">
-      <a :href="item.url" target="_blank">{{ item.title }}</a>
+      <router-link :to="`item/${item.id}`">{{ item.title }}</router-link>
       <small>{{ item.time_ago }} by {{ item.user }}</small>
     </p>
   </div>

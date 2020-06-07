@@ -1,3 +1,7 @@
+### 강의 자료
+- [권한 신청](https://gist.github.com/joshua1988/3fd36e04623aa42d536d8dbae37290de)
+- [Vue.js 실전 강좌 비공개 리포지토리 주소](https://github.com/joshua1988/vue-advanced)
+
 ### vue-news 프로젝트 생성
 ~~~
 // 프로젝트 생성
@@ -22,3 +26,7 @@ yarn add vuex
 
 #### 동적 라우트
 - [Dynamic Route Matching](https://router.vuejs.org/guide/essentials/dynamic-matching.html)
+- [실습 해커스 뉴스 API문서 주소](https://github.com/tastejs/hacker-news-pwas/blob/master/docs/api.md)
+- [실습 해커 뉴스 공식 사이트 주소](https://news.ycombinator.com/)
+- [라우터 트랜지션 문서](https://router.vuejs.org/guide/advanced/transitions.html#per-route-transition)
+- [뷰 트랜지션 문서](https://vuejs.org/v2/guide/transitions.html)
