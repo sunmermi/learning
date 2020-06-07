@@ -8,18 +8,23 @@
     </p> -->
 
     <!-- map 헬퍼함수 : mapGetters 사용 -->
-    <p v-for="item in fetchNews" :key="item.id">
-      <a :href="item.url" target="_blank">{{ item.title }}</a>
-      <small>
-        {{ item.time_ago }} by 
-        <!-- <router-link :to="'/user/' + item.user">
-          {{ item.user }}
-        </router-link> -->
-        <router-link :to="`/user/${item.user}`">
-          {{ item.user }}
-        </router-link>
-      </small>
-    </p> 
+    <ul class="item_list">
+      <li v-for="item in fetchNews" :key="item.id" class="post">
+        <span class="item_points">{{ item.points }}</span>
+        <div>
+          <p class="item_title">
+            <a :href="item.url" target="_blank">{{ item.title }}</a>
+          </p>
+          <small class="itme_info">
+            {{ item.time_ago }} by 
+            <!-- <router-link :to="'/user/' + item.user">{{ item.user }}</router-link> -->
+            <router-link :to="`/user/${item.user}`" class="link_user">
+              {{ item.user }}
+            </router-link>
+          </small>
+        </div>
+      </li> 
+    </ul>
   </div>
 </template>
 
@@ -74,7 +79,26 @@ export default {
 // };
 </script>
 
-
-<style>
-
+<style lang="sass" scoped>
+.item_list
+  margin: 0
+  padding: 0
+.post
+  list-style: none
+  display: flex
+  align-items: center
+  border-bottom: 1px solid #eee
+.item_points
+  width: 80px
+  height: 80px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: #42b883
+.item_title
+  margin: 0
+.itme_info
+  color: #35495e
+.link_user
+  color: #35495e
 </style>

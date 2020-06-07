@@ -22,6 +22,17 @@ body{
   margin: 0;
   padding: 0;
 }
+a{
+  color: #35495e;
+  text-decoration: none;
+  &.router-link-exact-active{
+    text-decoration: underline;
+  }
+  &:hover{
+    color: #000;
+    text-decoration: underline;
+  }
+}
 .content_view{
   padding: 0 20px;
 }
