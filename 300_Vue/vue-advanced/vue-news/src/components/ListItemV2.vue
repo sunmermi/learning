@@ -38,6 +38,23 @@ export default {
       return this.$store.state[name];
     }
   },
+  created() { // 컴포넌트가 생성되자마자 실행되는 로직
+    // this.$store.dispatch('FETCH_JOBS');
+
+    // todo. 뉴스 질문 직업 분기 처리
+    // 패스값을 가지고 온다 
+    // 라우터 path의 정보값을 가져오던가 라우트 설정하는 파일에 가서 네임값을 넣어서 그것을 이용
+    const name = this.$route.name;
+    let fetchName = '';
+    if(name === 'news') {
+      fetchName = 'FETCH_NEWS';
+    }else if(name === 'jobs') {
+      fetchName = 'FETCH_JOBS';
+    }else if(name === 'ask') {
+      fetchName = 'FETCH_ASK';
+    }
+    this.$store.dispatch(fetchName);
+  },
 }
 </script>
 
