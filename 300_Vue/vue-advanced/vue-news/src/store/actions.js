@@ -6,11 +6,12 @@ export default {
   // actions에서는 context 인자 제공디 되는데 mutations로 넘기기위한것
   FETCH_NEWS(context) {
     fetchNewsList()
-      .then(response => {
+      .then(response => { // 데이터를 받아와서
         // mutations으로 data넘기기 
         // SET_NEWS에 response.dat 넘기기
         // console.log(response);
         context.commit('SET_NEWS', response.data); 
+        return response; // 객체반환
       })
       .catch(error => {
         console.log(error);

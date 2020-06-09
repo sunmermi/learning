@@ -30,3 +30,7 @@ yarn add vuex
 - [실습 해커 뉴스 공식 사이트 주소](https://news.ycombinator.com/)
 - [라우터 트랜지션 문서](https://router.vuejs.org/guide/advanced/transitions.html#per-route-transition)
 - [뷰 트랜지션 문서](https://vuejs.org/v2/guide/transitions.html)
+
+
+#### 라이프 사이클 
+- [라이프 사이클](https://beomy.tistory.com/47)
