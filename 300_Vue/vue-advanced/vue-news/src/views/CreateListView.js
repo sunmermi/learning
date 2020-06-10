@@ -1,7 +1,6 @@
 import ListView from '@/views/ListView';
 import bus from '@/utils/bus.js';
 
-
 // 하이 오더 컴포넌트
 export default function createListView(name) { // 
   return {
@@ -14,7 +13,7 @@ export default function createListView(name) { //
       // 체이닝을 해서 추가적인 처리를 할수 있음.
       this.$store.dispatch('FETCH_LIST', this.$route.name)
         .then( () => {
-          console.log('fatched');
+          console.log('HOC fatched');
           bus.$emit('end:spinner');
         })
         .catch( (error) => {
