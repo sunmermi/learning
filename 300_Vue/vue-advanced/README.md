@@ -34,3 +34,9 @@ yarn add vuex
 
 #### 라이프 사이클 
 - [라이프 사이클](https://beomy.tistory.com/47)
+
+#### V4. 하이 오더 컴포넌트
+- 리액트의 하이오더 컴포넌트에서 기원된것
+- 컴포넌트에서 반복되는 코드를 또다시 재사용할 수 있도록 한다.
+- [리액트 하이 오더 컴포넌트 공식 문서](https://reactjs.org/docs/higher-order-components.html)
+- 실습내용에서 뉴스, 직업, 질문 에서 하는 리스트들을 뿌려주는 행동들이 같았기 때문에 그 행동을 재활용할 수 있도록 CreateListView.js로 코드를 옮김

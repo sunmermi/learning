@@ -34,8 +34,8 @@
 export default {
   computed: {
     listItems() {
-      // 하이 오더 컴포넌트 사용후
-      return this.$store.state.list;
+      const name = this.$route.name;
+      return this.$store.state[name];
     }
   },
 }

@@ -9,6 +9,9 @@ export default{
   SET_ASK(state, data) {
     state.ask = data;
   },
+  SET_LIST(state, data) { // 하이 오더 컴포넌트 
+    state.list = data;
+  },
   SET_USER(state, data) {
     state.user = data;
   },

@@ -17,11 +17,6 @@ function fetchJobsList() {
 function fetchAskList() {
   return axios.get(`${config.baseUrl}ask/1.json`);
 }
-function fetchList(pageName) { 
-  // 뉴스, 잡, 질문 api를 호출할때 공통으로 사용 할수있도록 
-  // 페이지 네임만  인자로 따로 받음
-  return axios.get(`${config.baseUrl}${pageName}/1.json`);
-}
 function fetchUserInfo(username) {
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
@@ -35,5 +30,4 @@ export {
   fetchAskList,
   fetchUserInfo,
   fetchItem,
-  fetchList,
 }

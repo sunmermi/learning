@@ -1,6 +1,6 @@
 // 액션즈는 코드에서는 
 // store.js에서 임폴트한 api들의 함수들을 내용을 참고하는것들이 있기때문에 
-import { fetchNewsList, fetchJobsList, fetchAskList, fetchUserInfo, fetchItem  } from '@/api/api.js';
+import { fetchNewsList, fetchJobsList, fetchAskList, fetchUserInfo, fetchItem, fetchList  } from '@/api/api.js';
 
 export default {
   // actions에서는 context 인자 제공디 되는데 mutations로 넘기기위한것
@@ -17,7 +17,7 @@ export default {
         console.log(error);
       });
   },
-  // 디스트럭처링 
+  // 디스트럭처링  
   FETCH_JOBS({ commit }) {
     fetchJobsList()
       .then( ({ data }) => {
@@ -49,6 +49,17 @@ export default {
     fetchItem(id)
       .then( ({ data }) => {
         commit('SET_ITEM', data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, 
+  FETCH_LIST({ commit }, pagename) { // 하이 오더 컴포넌트 
+    // 천번째인자로 커밋을 디스트럭쳐링
+    // 컨텍스트에서 커밋 꺼내와서 fetchList 호출
+    fetchList(pagename)
+      .then( ({ data }) => {
+        commit('SET_LIST', data);
       })
       .catch(error => {
         console.log(error);

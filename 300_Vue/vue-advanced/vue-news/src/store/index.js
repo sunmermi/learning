@@ -19,6 +19,7 @@ export const store = new Vuex.Store({
     ask: [],
     user: {},
     item: {},
+    list: [], // 하이 오더 컴포넌트 
   },
   getters: {
     fetchNews(state) {
