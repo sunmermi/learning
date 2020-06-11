@@ -52,3 +52,13 @@ yarn add vuex
 
 #### 비교
 - [믹스인과 하이 오더 컴포넌트 비교 분석](https://joshua1988.github.io/vue-camp/reuse/mixins-vs-hoc.html#hoc-vs-mixins)
+
+
+#### 데이터 호출 시점
+1. 라우터에서 네이베이션 가드 
+  - [참고 블로그](https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards/)
+  - 특정 유알엘로 접근하기 전의 동작을 정의하는 속성(함수)
+2. 컴포넌트 라이프 사이클 훅
+  - created : 컴포넌트가 생성되자마자 호출되는 로직
+- 뭐가 다를까?
+  - 라우터 가드가 먼저

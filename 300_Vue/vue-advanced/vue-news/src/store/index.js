@@ -19,7 +19,9 @@ export const store = new Vuex.Store({
     ask: [],
     user: {},
     item: {},
-    list: [], // 하이 오더 컴포넌트 
+    list: [], // 하이 오더 컴포넌트 와 믹스인 에서 사용
+    // 문제점 발생 : 리스트 데이터를 여러군데서 사용중이기 때문에 데이터불러올때가 느릴경우
+    // 데이터가 변경되는게 눈에 보여질수있음
   },
   getters: {
     fetchNews(state) {

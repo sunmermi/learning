@@ -54,12 +54,19 @@ export default {
         console.log(error);
       });
   }, 
+  // # 시점 2
   FETCH_LIST({ commit }, pagename) { // 하이 오더 컴포넌트 
     // 천번째인자로 커밋을 디스트럭쳐링
+
+    // # 시점 3 : return 을 해줘야함 데이터 순서 보장
+    // 리턴 : dispatch로 호출을 해서 체이닝작업을 하려면 넘어오는 데이터가 있어야함 그래야 비동기처리 가능
     // 컨텍스트에서 커밋 꺼내와서 fetchList 호출
-    fetchList(pagename)
-      .then( ({ data }) => {
-        commit('SET_LIST', data);
+    return fetchList(pagename)
+      .then( ( response ) => {
+        // # 시점 4
+        console.log('시점 4');
+        commit('SET_LIST', response.data);
+        return response;
       })
       .catch(error => {
         console.log(error);
