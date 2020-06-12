@@ -21,7 +21,7 @@ export default {
   },
 }
 
-// 하이오더 컴포넌트
-// export default function create(name) {
-//   // 재사용할 컴포넌트 옵션 & 로직
-// }
+// // 하이오더 컴포넌트
+// // export default function create(name) {
+// //   // 재사용할 컴포넌트 옵션 & 로직
+// // }

@@ -58,6 +58,7 @@ yarn add vuex
 1. 라우터에서 네이베이션 가드 
   - [참고 블로그](https://joshua1988.github.io/web-development/vuejs/vue-router-navigation-guards/)
   - 특정 유알엘로 접근하기 전의 동작을 정의하는 속성(함수)
+  - [네비게이션 가드 뷰 라우터 공식 문서](https://router.vuejs.org/kr/guide/advanced/navigation-guards.html)
 2. 컴포넌트 라이프 사이클 훅
   - created : 컴포넌트가 생성되자마자 호출되는 로직
 - 뭐가 다를까?
