@@ -1,6 +1,9 @@
 ### 강의 자료
 - [권한 신청](https://gist.github.com/joshua1988/3fd36e04623aa42d536d8dbae37290de)
 - [Vue.js 실전 강좌 비공개 리포지토리 주소](https://github.com/joshua1988/vue-advanced)
+ - vscode 플러그인
+  - vue peek
+  - vuter
 
 ### vue-news 프로젝트 생성
 ~~~
