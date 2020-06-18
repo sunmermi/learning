@@ -18,6 +18,8 @@ export const store = new Vuex.Store({
     news: [],
     ask: [],
     jobs: [],
+    user: {},
+    item: [],
   },
   getters: {
     fetchedNews(state) {
@@ -28,6 +30,9 @@ export const store = new Vuex.Store({
     },
     fetchedJobs(state) {
       return state.jobs;
+    },
+    fetchedItem(state) {
+      return state.item;
     },
   },
   mutations, // state 값을 변경하는 이벤트 로직 메서드 유일한 방법 methods

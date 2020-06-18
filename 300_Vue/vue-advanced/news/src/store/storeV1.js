@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
   },
   actions: {
     // 사용자의 입력에 따라 데이터를 변경하는 aysnc methods (기다렸다가 값을 받아서 뿌려줘야 하는 경우 사용)
-    FETCT_NEWS({ commit }) {
+    FETCH_NEWS({ commit }) {
       // api 호출 파일 분리
       fetchNewsList()
         .then( response => {
@@ -50,7 +50,7 @@ export const store = new Vuex.Store({
           console.log('error : ', error);
         });
     },
-    FETCT_ASK({ commit }) {
+    FETCH_ASK({ commit }) {
       // api 호출 파일 분리
       fetchAskList()
         .then( response => {
@@ -60,7 +60,7 @@ export const store = new Vuex.Store({
           console.log('error : ', error);
         });
     },
-    FETCT_JOBS({ commit }) {
+    FETCH_JOBS({ commit }) {
       // api 호출 파일 분리
       fetchJobsList()
         .then( response => {

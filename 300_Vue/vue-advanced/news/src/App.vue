@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <ToolBar></ToolBar>
-    <router-view></router-view>
+    <transition name="page">
+      <router-view class="content_view"></router-view>
+    </transition>
   </div>
 </template>
 
