@@ -39,11 +39,16 @@
 
 export default {
   computed: {
-    // #4 : 뉴스 직업 질문 컴포넌트 하나로 분리
+    // #5 : HOC
     listItems() {
-      const name = this.$route.name;
-      return this.$store.state[name];
+      return this.$store.state.list;
     }
+
+    // #4 : 뉴스 직업 질문 컴포넌트 하나로 분리
+    // listItems() {
+    //   const name = this.$route.name;
+    //   return this.$store.state[name];
+    // }
 
     // #3
     // mapGtters 배열표기법 
@@ -67,15 +72,15 @@ export default {
   },
   created() { // 컴포넌트가 생성되자마자 실행되는 로직
 
-    // #4 : 뉴스 직업 질문 컴포넌트 하나로 분리
-    const name = this.$route.name;
-    if(name === "news") {
-      this.$store.dispatch('FETCH_NEWS');
-    }else if(name === "ask") {  
-      this.$store.dispatch('FETCH_ASK');
-    }else if(name === "jobs") {
-      this.$store.dispatch('FETCH_JOBS');
-    }
+    // // #4 : 뉴스 직업 질문 컴포넌트 하나로 분리
+    // const name = this.$route.name;
+    // if(name === "news") {
+    //   this.$store.dispatch('FETCH_NEWS');
+    // }else if(name === "ask") {  
+    //   this.$store.dispatch('FETCH_ASK');
+    // }else if(name === "jobs") {
+    //   this.$store.dispatch('FETCH_JOBS');
+    // }
   },
 }
 </script>

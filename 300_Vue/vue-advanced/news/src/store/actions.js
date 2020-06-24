@@ -2,6 +2,7 @@ import {
   fetchNewsList, 
   fetchJobsList, 
   fetchAskList, 
+  fetchList,
   fetchUser, 
   fetchItem, 
 } from '@/api/api.js';
@@ -53,6 +54,16 @@ export default {
     fetchItem(itemid)
       .then( ({ data }) => {
         commit('SET_ITEM', data);
+      })
+      .catch( error => {
+        console.log('error : ', error);
+      });
+  },
+  FETCH_LIST({ commit }, pagename) {
+    // api 호출 파일 분리
+    fetchList(pagename)
+      .then( ({ data }) => {
+        commit('SET_LIST', data);
       })
       .catch( error => {
         console.log('error : ', error);
