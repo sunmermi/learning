@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h4>NEWS : 믹스인을 사용해서 데이터 호출</h4>
     <ListItem></ListItem>
   </div>
 </template>

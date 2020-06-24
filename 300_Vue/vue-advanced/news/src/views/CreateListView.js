@@ -14,13 +14,16 @@ export default function createListView(name) {
         // 체이닝을 해서 추가적인 처리를 할수 있음.
         this.$store.dispatch('FETCH_LIST', this.$route.name)
           .then( () => {
-            console.log('LIST fatched');
-            bus.$emit('end:spinner');
+            console.log('HOC 하이 오더 컴포넌트 : LIST fatched');
+            // bus.$emit('end:spinner');
           })
           .catch( (error) => {
             console.log(error);
           }); 
       }, 3000);
+    },
+    mounted() {
+      bus.$emit('end:spinner');
     },
     render(createElement) {
       return createElement(ListView);

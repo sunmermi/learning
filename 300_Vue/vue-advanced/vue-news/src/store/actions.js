@@ -5,7 +5,7 @@ import { fetchNewsList, fetchJobsList, fetchAskList, fetchUserInfo, fetchItem, f
 export default {
   // actions에서는 context 인자 제공디 되는데 mutations로 넘기기위한것
   FETCH_NEWS(context) {
-    fetchNewsList()
+    return fetchNewsList()
       .then(response => { // 데이터를 받아와서
         // mutations으로 data넘기기 
         // SET_NEWS에 response.dat 넘기기
@@ -19,7 +19,7 @@ export default {
   },
   // 디스트럭처링  
   FETCH_JOBS({ commit }) {
-    fetchJobsList()
+    return fetchJobsList()
       .then( ({ data }) => {
         commit('SET_JABS', data);
       })
@@ -28,7 +28,7 @@ export default {
       });
   },
   FETCH_ASK({ commit }) {
-    fetchAskList()
+    return fetchAskList()
       .then( ({ data }) => {
         commit('SET_ASK', data);
       })
@@ -37,7 +37,7 @@ export default {
       });
   },
   FETCH_USER({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then( ({ data }) => {
         commit('SET_USER', data);
       })
@@ -46,7 +46,7 @@ export default {
       });
   },
   FETCH_ITEM({ commit }, id) {
-    fetchItem(id)
+    return fetchItem(id)
       .then( ({ data }) => {
         commit('SET_ITEM', data);
       })
