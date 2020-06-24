@@ -1,6 +1,6 @@
 import Vue from 'vue'; // vue loading
 import VueRouter from 'vue-router'; 
-// import NewsView from "@/views/NewsView.vue";
+import NewsView from "@/views/NewsView.vue";
 // import AskView from "@/views/AskView.vue";
 // import JobsView from "@/views/JobsView.vue";
 import UserView from "@/views/UserView.vue";
@@ -21,8 +21,8 @@ export const router = new VueRouter({
     {
       path: '/news',
       name: 'news',
-      // component: NewsView,
-      component: CreateListView('NewsView'),  // 하이 오더 컴포넌트
+      component: NewsView,
+      // component: CreateListView('NewsView'),  // 하이 오더 컴포넌트
     },
     {
       path: '/ask',

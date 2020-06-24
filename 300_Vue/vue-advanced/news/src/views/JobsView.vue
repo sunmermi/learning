@@ -12,6 +12,8 @@ export default {
   components: {
     ListItem,
   },
+
+  // 뉴스 질문 직업 모두 중복되는 로직
   created() { 
     bus.$emit('start:spinner'); // 이벤트를 보내
     
