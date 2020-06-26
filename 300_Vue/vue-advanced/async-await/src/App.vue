@@ -13,6 +13,7 @@
 
 <script>
 import axios from 'axios';
+import { handleException } from '@/utils/handler.js';
 
 export default {
   name: 'App',
@@ -43,14 +44,19 @@ export default {
     // 요청 -> 결과값 변수에 넣고(직관적!!) -> 비교하고 ..
     // then, catch 사용하지 않아도 됨
     async loginUser() {
-      // 첫번째 비동기 요청
-      let response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
-      console.log('async & await response : ', response);
+      try {
+        // 첫번째 비동기 요청
+        let response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+        console.log('async & await response : ', response);
 
-      if(response.data.id === 1) {
-        // 두번째 비동기 요청
-        let list = await axios.get('https://jsonplaceholder.typicode.com/todos');
-        this.items = list.data;
+        if(response.data.id === 1) {
+          // 두번째 비동기 요청
+          let list = await axios.get('https://jsonplaceholder.typicode.com/todos');
+          this.items = list.data;
+        }
+      } catch (error) {
+        console.log('error : ', error);
+        handleException(error);
       }
     },
   },
